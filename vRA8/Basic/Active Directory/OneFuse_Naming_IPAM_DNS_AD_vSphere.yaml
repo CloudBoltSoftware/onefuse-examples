@@ -1,0 +1,26 @@
+formatVersion: 1
+inputs: {}
+resources:
+  Cloud_vSphere_Machine_1:
+    type: Cloud.vSphere.Machine
+    properties:
+      #vRA Properties
+      imageRef: Centos7
+      cpuCount: 1
+      totalMemoryMB: 1024
+      #OneFuse Module Properties
+      OneFuse_NamingPolicy: 'onefuseblog:default'
+      OneFuse_IpamPolicy_Nic0: 'onefuseblog:default'
+      OneFuse_DnsPolicy_Nic0: 'onefuseblog:default:{{dns_suffix}}'
+      OneFuse_ADPolicy: 'onefuseblog:default'
+      #Additional Properties used to generate name
+      nameGroup: pp
+      nameLocation: atl
+      nameEnv: prod
+      nameOS: l
+      nameApp: web
+      dns_suffix: infoblox851.sovlabs.net
+      #Additional Properties used for Active Directory Integration
+      ouGroup: PiedPiper
+      ouEnv: PRD
+      sgEnv: prod

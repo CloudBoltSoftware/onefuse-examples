@@ -1,0 +1,10 @@
+Ignore the following
+.exe
+.json
+.tfstate
+.backup
+.terraform
+.tfstate.backup
+terraform.tfstate
+terraform.tfstate.backup
+.tfvars
