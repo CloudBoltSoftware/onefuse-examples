@@ -1,11 +1,11 @@
 variable "aws_key_id" {
   type = string
-  default = "AKIAX7ONFO34XGZCWOMI"
+  default = ""
 }
 
 variable "aws_access_key" {
   type = string
-  default = "cAMTFockGbp3W4jUGYkcLyKSbtrBHquF1As24KiA"
+  default = ""
 }
 
 variable "aws_region" {
