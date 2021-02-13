@@ -3,8 +3,9 @@ variable "onefuse_scheme" {
   default = "https"
 }
 
-variable "onefuse_address" {
+variable "onefusebp_address" {
   type = string
+  default = "onefuse12bp.sovlabs.net"
 }
 
 variable "onefuse_port" {
@@ -29,18 +30,6 @@ variable "workspace_url" {
   default = "" // Default
 }
 
-variable "ip_address" {
-  type = string
-}
-
-variable "dns_zones" {
-  type = string
-}
-
-variable "hostname" {
-  type = string
-}
-
 variable "onefuse_template_properties" {
   type = map
   default = {
@@ -48,6 +37,10 @@ variable "onefuse_template_properties" {
       "nameOS"         	              = "w"
       "nameApplication"               = "ap"
       "nameLocation"                  = "east"
-      "dnsSuffix"                    = "infoblox851.sovlabs.net"
+      "dnsSuffix"                     = "infoblox851.sovlabs.net"
+      "ouApplication"                 = "wordpress"
+      "ouLocation"                    = "useast"
+      "ouEnvironment"                 = "production"
+      "sgEnvironment"                 = "prod"
   }
 }

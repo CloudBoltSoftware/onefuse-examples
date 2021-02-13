@@ -15,7 +15,7 @@
 provider "onefuse" {
 
   scheme     = var.onefuse_scheme
-  address    = var.onefuse_address
+  address    = var.onefusebp_address
   port       = var.onefuse_port
   user       = var.onefuse_user
   password   = var.onefuse_password
@@ -24,16 +24,16 @@ provider "onefuse" {
 
 // OneFuse Data Source for Naming Policy to lookup policy ID
 data "onefuse_naming_policy" "policy" {
-  name = "machine"
+  name = "default"
 }
 
 // OneFuse Resource for Naming
-resource "onefuse_naming" "machine" {
+resource "onefuse_naming" "name" {
   naming_policy_id        = data.onefuse_naming_policy.policy.id
   template_properties     = var.onefuse_template_properties
 }
 
 // Output Results for Naming
 output "hostname" {
-  value = onefuse_naming.machine.name
+  value = onefuse_naming.name.name
 }

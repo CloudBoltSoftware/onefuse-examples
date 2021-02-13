@@ -69,7 +69,3 @@ output "gateway" {
 output "network" {
   value = onefuse_ipam_record.ipam-record.network
 }
-
-output "subnet" {
-  value = onefuse_ipam_record.ipam-record.subnet
-}

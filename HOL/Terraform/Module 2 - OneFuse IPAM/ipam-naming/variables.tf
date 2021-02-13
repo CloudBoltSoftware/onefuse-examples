@@ -3,8 +3,9 @@ variable "onefuse_scheme" {
   default = "https"
 }
 
-variable "onefuse_address" {
+variable "onefusebp_address" {
   type = string
+  default = "onefuse12bp.sovlabs.net"
 }
 
 variable "onefuse_port" {
@@ -32,15 +33,10 @@ variable "workspace_url" {
 variable "onefuse_template_properties" {
   type = map
   default = {
-      "nameEnv"               = "p"
-      "nameOS"         	      = "w"
-      "nameDatacenter"        = "por"
-      "nameApp"               = "ap"
-      "nameLocation"          = "atl"
-      "nameGroup"             = "pp"
-      "ouGroup"               = "PiedPiper"
-      "ouEnv"                 = "PRD"
-      "dnsSuffix"             = "infoblox851.sovlabs.net"
-      "sgEnv"                 = "prod"
+      "nameEnvironment"               = "p"
+      "nameOS"         	              = "w"
+      "nameApplication"               = "ap"
+      "nameLocation"                  = "east"
+      "dnsSuffix"                    = "infoblox851.sovlabs.net"
   }
 }

@@ -32,6 +32,16 @@ data "onefuse_ipam_policy" "policy" {
   name = "prodeast"
 }
 
+// OneFuse Data Source for DNS Policy to lookup policy ID
+data "onefuse_dns_policy" "policy" {
+  name = "default"
+}
+
+// OneFuse Data Source for AD Policy to lookup policy ID
+data "onefuse_ad_policy" "policy" {
+  name = "default"
+}
+
 // OneFuse Resource for Naming
 resource "onefuse_naming" "name" {
   naming_policy_id        = data.onefuse_naming_policy.policy.id
@@ -47,6 +57,25 @@ resource "onefuse_ipam_record" "ipam-record" {
     template_properties = var.onefuse_template_properties
 }
 
+// OneFuse Resource for DNS Record
+resource "onefuse_dns_record" "dns-record" {
+    
+    name = onefuse_naming.name.name
+    policy_id = data.onefuse_dns_policy.policy.id
+    workspace_url = var.workspace_url
+    zones = [onefuse_naming.name.dns_suffix]
+    value = onefuse_ipam_record.ipam-record.ip_address
+    template_properties = var.onefuse_template_properties
+}
+
+// OneFuse Resource for AD
+resource "onefuse_microsoft_ad_computer_account" "computer" {
+    
+    name = onefuse_naming.name.name
+    policy_id = data.onefuse_ad_policy.policy.id
+    workspace_url = var.workspace_url
+    template_properties = var.onefuse_template_properties
+}
 
 // Output Results for Naming
 output "hostname" {
@@ -70,6 +99,6 @@ output "network" {
   value = onefuse_ipam_record.ipam-record.network
 }
 
-output "subnet" {
-  value = onefuse_ipam_record.ipam-record.subnet
+output "ad_ou" {
+  value = onefuse_microsoft_ad_computer_account.computer.final_ou
 }

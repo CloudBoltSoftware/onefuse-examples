@@ -37,18 +37,30 @@ variable "onefuse_template_properties" {
       "nameOS"         	              = "w"
       "nameApplication"               = "ap"
       "nameLocation"                  = "east"
-      "dnsSuffix"                    = "infoblox851.sovlabs.net"
+      "dnsSuffix"                     = "infoblox851.sovlabs.net"
+      "ouApplication"                 = "wordpress"
+      "ouLocation"                    = "useast"
+      "ouEnvironment"                 = "production"
+      "sgEnvironment"                 = "prod"
   }
 }
 
-variable "vsphere_user" {
-        type = string
+variable "username" {
+  type = string
+  default = "bptestuser" // Default
 }
 
-variable "vsphere_password" {
-        type = string
+variable "firstname" {
+  type = string
+  default = "Blog" // Default
 }
 
-variable "vsphere_server" {
-        type  = string
+variable "lastname" {
+  type = string
+  default = "User" // Default
+}
+
+variable "domain" {
+  type = string
+  default = "sovlabs.net" // Default
 }

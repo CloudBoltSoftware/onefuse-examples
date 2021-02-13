@@ -1,4 +1,4 @@
- // Comment out the following for Terraform 0.12 to work
+// Comment out the following for Terraform 0.12 to work
 
  terraform {
   required_providers {
@@ -22,18 +22,21 @@ provider "onefuse" {
   verify_ssl = var.onefuse_verify_ssl
 }
 
-// OneFuse Data Source for AD Policy to lookup policy ID
-data "onefuse_ad_policy" "policy" {
-  name = "prod"
+// OneFuse Data Source for Scripting Policy to lookup policy ID
+data "onefuse_scripting_policy" "policy" {
+  name = "add_ad_user"
 }
 
-// OneFuse Resource for AD Computer Account
-resource "onefuse_microsoft_ad_computer_account" "computer" {
-    
-    name = var.name
-    policy_id = data.onefuse_ad_policy.policy.id
+// Onefuse Scripting Deployment
+resource "onefuse_scripting_deployment" "add_ad_user" {
+    policy_id = data.onefuse_scripting_policy.policy.id
     workspace_url = var.workspace_url
-    template_properties = var.template_properties
+    template_properties = {
+        "username"        = var.username 
+        "firstname"       = var.firstname
+        "lastname"        = var.lastname
+        "domain"          = var.domain
+    }
 }
 
 // Output Result for AD OU Placement

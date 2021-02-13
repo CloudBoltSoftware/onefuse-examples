@@ -19,6 +19,10 @@ variable "onefuse_password" {
   type = string
 }
 
+variable "name" {
+  type = string
+}
+
 variable "onefuse_verify_ssl" {
   type = bool
   default = false
@@ -29,19 +33,28 @@ variable "workspace_url" {
   default = "" // Default
 }
 
-variable "ip_address" {
+variable "username" {
   type = string
+  default = "" // Default
 }
 
-variable "dns_zones" {
+variable "firstname" {
   type = string
+  default = "" // Default
 }
 
-variable "hostname" {
+variable "lastname" {
   type = string
+  default = "" // Default
 }
 
-variable "onefuse_template_properties" {
+variable "domain" {
+  type = string
+  default = "" // Default
+}
+
+
+variable "template_properties" {
   type = map
   default = {
       "nameEnv"               = "p"
@@ -54,5 +67,6 @@ variable "onefuse_template_properties" {
       "ouEnv"                 = "PRD"
       "dnsSuffix"             = "infoblox851.sovlabs.net"
       "sgEnv"                 = "prod"
+      "OneFuse_VmNic0.fqdn"   = ""
   }
 }

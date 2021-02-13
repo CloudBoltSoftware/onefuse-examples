@@ -8,3 +8,4 @@ Ignore the following
 terraform.tfstate
 terraform.tfstate.backup
 .tfvars
+variables.sh
