@@ -22,22 +22,6 @@ output "network" {
   value = module.ipam.network
 }
 
-output "subnet" {
-  value = module.ipam.subnet
-}
-
-output "primary_dns" {
-  value = module.ipam.primary_dns
-}
-
-output "secondary_dns" {
-  value = module.ipam.secondary_dns
-}
-
-output "nic_label" {
-  value = module.ipam.nic_label
-}
-
 output "fqdn" {
   value = format("%s.%s", module.name.hostname, module.name.dns_suffix)
 }

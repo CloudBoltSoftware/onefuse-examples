@@ -1,4 +1,4 @@
-variable "template" {
+variable "property_set" {
   type = string
 }
 
