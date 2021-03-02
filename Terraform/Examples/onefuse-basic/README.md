@@ -36,7 +36,7 @@ vsphere_password = ""
 
 ### /examples/onefuse-basic
 
-Usage examples of how to consume OneFuse Terraform Module
+Usage examples of how to consume OneFuse Terraform Provider
 
 **/example/onefuse-basic/naming**
 
