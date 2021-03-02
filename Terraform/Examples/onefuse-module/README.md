@@ -1,0 +1,75 @@
+# Pre-sales terraform demo examples
+
+The examples contained in this repo are tied to the OneFuse Terraform module also available in this repo.
+
+## Environment Variables if you want to use them:
+
+```
+//OneFuse Provider Info
+TF_VAR_onefuse_address
+TF_VAR_onefuse_port
+TF_VAR_onefuse_user
+TF_VAR_onefuse_password
+
+//vSphere Provider Info
+TF_VAR_vsphere_server
+TF_VAR_vsphere_user
+TF_VAR_vsphere_password
+```
+
+## terraform.tfvars example
+
+```
+//OneFuse Provider Info
+onfuse_address = ""
+onefuse_port = ""
+onefuse_user = ""
+onefuse_password = ""
+
+//vSphere Provider Info
+vsphere_server = ""
+vsphere_user = ""
+vsphere_password = ""
+```
+
+## Usage
+
+### /examples/onefuse-module
+
+Usage examples of how to consume OneFuse Terraform Module
+
+**/example/onefuse-module/naming**
+
+```
+terraform init
+terraform plan
+terraform apply --auto-approve
+terraform destroy --auto-approve
+```
+
+**/example/onefuse-module/ad**
+
+```
+terraform init
+terraform plan -var="hostname=testname" 
+terraform apply --auto-approve -var="name=testname"
+terraform destroy --auto-approve -var="name=testname"
+```
+
+**/example/onefuse-module/ipam**
+
+```
+terraform init
+terraform plan -var="hostname=testname" 
+terraform apply --auto-approve -var="hostname=testname"
+terraform destroy --auto-approve -var="hostname=testname"
+```
+
+**/example/onefuse-module/dns**
+
+```
+terraform init
+terraform plan -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1"
+terraform apply --auto-approve -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1"
+terraform destroy --auto-approve -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1"
+```
