@@ -34,42 +34,13 @@ vsphere_password = ""
 
 ## Usage
 
-### /examples/onefuse-basic
+### /examples/onefuse-module
 
 Usage examples of how to consume OneFuse Terraform Module
-
-**/example/onefuse-basic/naming**
 
 ```
 terraform init
 terraform plan
 terraform apply --auto-approve
 terraform destroy --auto-approve
-```
-
-**/example/onefuse-basic/ad**
-
-```
-terraform init
-terraform plan -var="hostname=testname" 
-terraform apply --auto-approve -var="name=testname"
-terraform destroy --auto-approve -var="name=testname"
-```
-
-**/example/onefuse-basic/ipam**
-
-```
-terraform init
-terraform plan -var="hostname=testname" 
-terraform apply --auto-approve -var="hostname=testname"
-terraform destroy --auto-approve -var="hostname=testname"
-```
-
-**/example/onefuse-basic/dns**
-
-```
-terraform init
-terraform plan -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1"
-terraform apply --auto-approve -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1"
-terraform destroy --auto-approve -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1"
 ```

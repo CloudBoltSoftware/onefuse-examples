@@ -4,7 +4,7 @@
   required_providers {
     onefuse = {
       source  = "CloudBoltSoftware/onefuse"
-      version = ">= 1.10.0"
+      version = ">= 1.20.0"
    }
   }
   required_version = ">= 0.13"
@@ -22,18 +22,22 @@ provider "onefuse" {
   verify_ssl = var.onefuse_verify_ssl
 }
 
-// OneFuse Data Source for Naming Policy to lookup policy ID
-data "onefuse_naming_policy" "policy" {
-  name = "machine"
+// OneFuse Data Source for DNS Policy to lookup policy ID
+data "onefuse_dns_policy" "policy" {
+  name = "prod"
 }
 
-// OneFuse Resource for Naming
-resource "onefuse_naming" "machine" {
-  naming_policy_id        = data.onefuse_naming_policy.policy.id
-  template_properties     = var.onefuse_template_properties
+// OneFuse Resource for DNS Record
+resource "onefuse_dns_record" "dns-record" {
+    
+    name = var.hostname
+    policy_id = data.onefuse_dns_policy.policy.id
+    workspace_url = var.workspace_url
+    zones = [var.dns_zones]
+    value = var.ip_address
+    template_properties = var.onefuse_template_properties
 }
 
-// Output Results for Naming
-output "hostname" {
-  value = onefuse_naming.machine.name
-}
+
+
+
