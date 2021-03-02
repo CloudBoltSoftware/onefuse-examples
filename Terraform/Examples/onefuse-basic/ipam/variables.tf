@@ -31,10 +31,9 @@ variable "workspace_url" {
 
 variable "hostname" {
   type = string
-  default = "sidtest787.infoblox851.sovlabs.net"
 }
 
-variable "onefuse_template_properties" {
+variable "template_properties" {
   type = map
   default = {
       "nameEnv"               = "p"

@@ -22,18 +22,16 @@ provider "onefuse" {
   verify_ssl = var.onefuse_verify_ssl
 }
 
-// OneFuse Data Source for Naming Policy to lookup policy ID
-data "onefuse_naming_policy" "policy" {
-  name = "machine"
+data "onefuse_static_property_set" "property_set" {
+  name = var.property_set
 }
 
-// OneFuse Resource for Naming
-resource "onefuse_naming" "machine" {
-  naming_policy_id        = data.onefuse_naming_policy.policy.id
-  template_properties     = var.template_properties
+
+data "onefuse_rendered_template" "properties" {
+    template = data.onefuse_static_property_set.property_set.raw
+    template_properties = var.template_properties
 }
 
-// Output Results for Naming
-output "hostname" {
-  value = onefuse_naming.machine.name
+output "properties" {
+  value = jsondecode(data.onefuse_rendered_template.properties.value)
 }

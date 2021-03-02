@@ -44,3 +44,7 @@ variable "template_properties" {
       "sgEnv"                 = "prod"
   }
 }
+
+variable "property_set" {
+  type = string
+}

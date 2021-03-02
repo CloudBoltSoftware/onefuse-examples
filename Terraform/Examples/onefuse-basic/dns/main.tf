@@ -35,7 +35,7 @@ resource "onefuse_dns_record" "dns-record" {
     workspace_url = var.workspace_url
     zones = [var.dns_zones]
     value = var.ip_address
-    template_properties = var.onefuse_template_properties
+    template_properties = var.template_properties
 }
 
 

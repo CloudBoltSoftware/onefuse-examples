@@ -41,7 +41,7 @@ variable "hostname" {
   type = string
 }
 
-variable "onefuse_template_properties" {
+variable "template_properties" {
   type = map
   default = {
       "nameEnv"               = "p"
