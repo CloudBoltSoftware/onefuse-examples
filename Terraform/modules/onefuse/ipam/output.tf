@@ -13,3 +13,15 @@ output "gateway" {
 output "network" {
   value = onefuse_ipam_record.ipam-record.network
 }
+
+output "subnet" {
+  value = onefuse_ipam_record.ipam-record.network
+}
+
+output "primary_dns" {
+  value = onefuse_ipam_record.ipam-record.primary_dns
+}
+
+output "secondary_dns" {
+  value = onefuse_ipam_record.ipam-record.secondary_dns
+}
