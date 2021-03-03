@@ -25,7 +25,7 @@ module "dns" {
     source = "./dns"
     policy = var.dns_policy
     ip_address = module.ipam.ip_address
-    dns_suffix = module.name.dns_suffix
+    dns_zones = module.name.dns_suffix
     hostname = module.name.hostname
     template_properties = var.template_properties
     count = var.dns_count
