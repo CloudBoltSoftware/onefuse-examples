@@ -73,3 +73,12 @@ terraform plan -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_add
 terraform apply --auto-approve -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1"
 terraform destroy --auto-approve -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1"
 ```
+
+**/examples/onefuse-basic/scripting**
+
+```
+terraform init
+terraform plan
+terraform apply --auto-approve -var="username=username" -var="firstname=firstname" -var="lastname=lastname"
+terraform destroy --auto-approve
+```

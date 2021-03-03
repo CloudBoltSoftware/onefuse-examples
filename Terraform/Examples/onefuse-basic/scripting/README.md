@@ -41,6 +41,6 @@ Usage examples of how to consume OneFuse Terraform Provider
 ```
 terraform init
 terraform plan
-terraform apply --auto-approve
+terraform apply --auto-approve -var="username=username" -var="firstname=firstname" -var="lastname=lastname"
 terraform destroy --auto-approve
 ```
