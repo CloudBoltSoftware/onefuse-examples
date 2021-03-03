@@ -1,12 +1,12 @@
 module "name" {
-    source = "./naming"
+    source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//namning"
     policy = var.name_policy
     template_properties = var.template_properties
     count = var.name_count
 }
 
 module "ad_computer" {
-    source = "./ad"
+    source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ad"
     policy = var.ad_policy
     hostname = module.name.hostname
     template_properties = var.template_properties
@@ -14,7 +14,7 @@ module "ad_computer" {
 }
 
 module "ipam" {
-    source = "./ipam"
+    source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ipam"
     policy = var.ipam_policy
     hostname = module.name.hostname
     template_properties = var.template_properties
@@ -22,7 +22,7 @@ module "ipam" {
 }
 
 module "dns" {
-    source = "./dns"
+    source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//dns"
     policy = var.dns_policy
     ip_address = module.ipam.ip_address
     dns_zones = module.name.dns_suffix
