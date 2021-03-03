@@ -3,7 +3,7 @@ module "onefuse" {
     name_policy = var.name_policy
     name_count = var.name_count
     ipam_policy = var.ipam_policy
-    ipam_count = var.ipamm_count
+    ipam_count = var.ipam_count
     dns_policy = var.dns_policy
     dns_count = var.dns_count
     ad_policy = var.ad_policy
