@@ -56,14 +56,22 @@ variable "template_properties" {
   }
 }
 
-variable "vsphere_user" {
-        type = string
+variable "ipam_policy" {
+  type = string
 }
 
-variable "vsphere_password" {
-        type = string
+variable "naming_policy" {
+  type = string
 }
 
-variable "vsphere_server" {
-        type  = string
+variable "ad_policy" {
+  type = string
+}
+
+variable "dns_policy" {
+  type = string
+}
+
+variable "script_policy" {
+  type = string
 }

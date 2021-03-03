@@ -24,7 +24,7 @@ provider "onefuse" {
 
 // OneFuse Data Source for IPAM Policy to lookup policy ID
 data "onefuse_ipam_policy" "policy" {
-  name = "atlprod"
+  name = var.policy
 }
 
 // OneFuse Resource for IPAM Record

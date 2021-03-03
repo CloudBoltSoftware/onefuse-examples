@@ -35,3 +35,8 @@ default = {
       "domain"          = "sovlabs.net"
   }
 }
+
+variable "policy" {
+  type = bool
+  default = false
+}

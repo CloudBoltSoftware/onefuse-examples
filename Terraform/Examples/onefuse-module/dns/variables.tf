@@ -58,3 +58,8 @@ variable "dns_zones" {
 variable "hostname" {
   type = string
 }
+
+variable "policy" {
+  type = string
+  default = "" // Default
+}

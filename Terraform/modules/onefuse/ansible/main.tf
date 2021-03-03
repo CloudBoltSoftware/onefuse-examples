@@ -7,7 +7,8 @@ data "onefuse_ansible_tower_policy" "policy" {
 resource "onefuse_ansible_tower_deployment" "job" {
 
   policy_id = data.onefuse_ansible_tower_policy.policy.id
-  hosts = [ var.hostname ] 
+  hosts = [ var.hostname ]
+  limit = var.limit
   template_properties = var.template_properties
     timeouts {
       create = "12m"

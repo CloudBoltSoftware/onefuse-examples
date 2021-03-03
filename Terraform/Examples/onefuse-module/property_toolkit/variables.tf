@@ -25,15 +25,6 @@ variable "onefuse_verify_ssl" {
   default = false
 }
 
-//vsphere provider inputs
-variable "vsphere_user" {
-        type = string
-}
-
-variable "vsphere_password" {
-        type = string
-}
-
-variable "vsphere_server" {
-        type  = string
+variable "property_set" {
+  type = string
 }

@@ -1,3 +1,4 @@
+//OneFuse Provider Inputs
 variable "onefuse_scheme" {
   type = string
   default = "https"
@@ -34,9 +35,10 @@ variable "hostname" {
   default = "" // Default
 }
 
+// Begin module inputs
 variable "template_properties" {
-  type = map
-  default = {
+type = map
+default = {
       "nameEnv"               = "p"
       "nameOS"         	      = "w"
       "nameDatacenter"        = "por"

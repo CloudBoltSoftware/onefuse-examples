@@ -23,7 +23,7 @@ provider "onefuse" {
 }
 
 data "onefuse_scripting_policy" "policy" {
-  name = "add_ad_user"
+  name = var.policy
 }
 
 // Onefuse Scripting Deployment

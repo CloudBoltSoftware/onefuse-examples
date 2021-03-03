@@ -24,7 +24,7 @@ provider "onefuse" {
 
 // OneFuse Data Source for AD Policy to lookup policy ID
 data "onefuse_ad_policy" "policy" {
-  name = "prod"
+  name = var.policy
 }
 
 // OneFuse Resource for AD Computer Account

@@ -24,27 +24,27 @@ provider "onefuse" {
 
 // OneFuse Data Source for IPAM Policy to lookup policy ID
 data "onefuse_ipam_policy" "policy" {
-  name = "atlprod"
+  name = var.ipam_policy
 }
 
 // OneFuse Data Source for Naming Policy to lookup policy ID
 data "onefuse_naming_policy" "policy" {
-  name = "machine"
+  name = var.naming_policy
 }
 
 // OneFuse Data Source for AD Policy to lookup policy ID
 data "onefuse_ad_policy" "policy" {
-  name = "prod"
+  name = var.ad_policy
 }
 
 // OneFuse Data Source for DNS Policy to lookup policy ID
 data "onefuse_dns_policy" "policy" {
-  name = "prod"
+  name = var.dns_policy
 }
 
 // OneFuse Data Source for Script Policy to lookup policy ID
 data "onefuse_scripting_policy" "policy" {
-  name = "add_ad_user"
+  name = var.script_policy
 }
 
 // OneFuse Resource for Naming Record

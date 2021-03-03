@@ -50,3 +50,8 @@ default = {
 variable "hostname" {
   type = string
 }
+
+variable "policy" {
+  type = string
+  default = "" // Default
+}

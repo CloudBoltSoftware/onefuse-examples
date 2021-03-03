@@ -26,10 +26,8 @@ onefuse_port = ""
 onefuse_user = ""
 onefuse_password = ""
 
-//vSphere Provider Info
-vsphere_server = ""
-vsphere_user = ""
-vsphere_password = ""
+//Resource Inputs
+policy = ""
 ```
 
 ## Usage
@@ -41,6 +39,6 @@ Usage examples of how to consume OneFuse Terraform Provider
 ```
 terraform init
 terraform plan
-terraform apply --auto-approve
-terraform destroy --auto-approve
+terraform apply --auto-approve -var="policy=policyname"
+terraform destroy --auto-approve -var="policy=policyname"
 ```

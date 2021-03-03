@@ -11,10 +11,6 @@ TF_VAR_onefuse_port
 TF_VAR_onefuse_user
 TF_VAR_onefuse_password
 
-//vSphere Provider Info
-TF_VAR_vsphere_server
-TF_VAR_vsphere_user
-TF_VAR_vsphere_password
 ```
 
 ## terraform.tfvars example
@@ -26,59 +22,5 @@ onefuse_port = ""
 onefuse_user = ""
 onefuse_password = ""
 
-//vSphere Provider Info
-vsphere_server = ""
-vsphere_user = ""
-vsphere_password = ""
 ```
 
-## Usage
-
-### /examples/onefuse-basic
-
-Usage examples of how to consume OneFuse Terraform Provider
-
-**/example/onefuse-basic/naming**
-
-```
-terraform init
-terraform plan
-terraform apply --auto-approve
-terraform destroy --auto-approve
-```
-
-**/example/onefuse-basic/ad**
-
-```
-terraform init
-terraform plan -var="hostname=testname" 
-terraform apply --auto-approve -var="name=testname"
-terraform destroy --auto-approve -var="name=testname"
-```
-
-**/example/onefuse-basic/ipam**
-
-```
-terraform init
-terraform plan -var="hostname=testname" 
-terraform apply --auto-approve -var="hostname=testname"
-terraform destroy --auto-approve -var="hostname=testname"
-```
-
-**/example/onefuse-basic/dns**
-
-```
-terraform init
-terraform plan -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1"
-terraform apply --auto-approve -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1"
-terraform destroy --auto-approve -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1"
-```
-
-**/examples/onefuse-basic/scripting**
-
-```
-terraform init
-terraform plan
-terraform apply --auto-approve -var="username=username" -var="firstname=firstname" -var="lastname=lastname"
-terraform destroy --auto-approve
-```

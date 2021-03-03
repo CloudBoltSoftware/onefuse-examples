@@ -51,14 +51,7 @@ variable "lastname" {
   default = "" // Default
 }
 
-variable "vsphere_user" {
-        type = string
-}
-
-variable "vsphere_password" {
-        type = string
-}
-
-variable "vsphere_server" {
-        type  = string
+variable "policy" {
+  type = string
+  default = "" // Default
 }

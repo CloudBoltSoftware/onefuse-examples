@@ -56,3 +56,8 @@ variable "template_properties" {
       "sgEnv"                 = "prod"
   }
 }
+
+variable "policy" {
+  type = string
+  default = "" // Default
+}

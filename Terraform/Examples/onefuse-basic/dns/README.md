@@ -26,10 +26,11 @@ onefuse_port = ""
 onefuse_user = ""
 onefuse_password = ""
 
-//vSphere Provider Info
-vsphere_server = ""
-vsphere_user = ""
-vsphere_password = ""
+//Resource Inputs
+policy = ""
+hostname = ""
+dns_zones = ""
+ip_address = ""
 ```
 
 ## Usage
@@ -40,7 +41,7 @@ Usage examples of how to consume OneFuse Terraform Provider
 
 ```
 terraform init
-terraform plan -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1"
-terraform apply --auto-approve -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1"
-terraform destroy --auto-approve -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1"
+terraform plan -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1" -var="policy=policyname"
+terraform apply --auto-approve -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1" -var="policy=policyname"
+terraform destroy --auto-approve -var="hostname=testname" -var="dns_zones=dns.domain" -var="ip_address=1.1.1.1" -var="policy=policyname"
 ```

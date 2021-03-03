@@ -24,7 +24,7 @@ provider "onefuse" {
 
 // OneFuse Data Source for DNS Policy to lookup policy ID
 data "onefuse_dns_policy" "policy" {
-  name = "prod"
+  name = var.policy
 }
 
 // OneFuse Resource for DNS Record
