@@ -26,6 +26,9 @@ onefuse_password = ""
 policy = ""
 hostname = ""
 
+//Rename sample.tfvars_sample -> sample.tfvars and fill out the appropriate values.
+terraform apply --auto-approve -var-file="sample.tfvars"
+
 ```
 
 

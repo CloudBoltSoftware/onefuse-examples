@@ -28,6 +28,10 @@ naming_policy = ""
 ad_policy = ""
 dns_policy = ""
 script_policy = ""
+
+//Rename sample.tfvars_sample -> sample.tfvars and fill out the appropriate values.
+terraform apply --auto-approve -var-file="sample.tfvars"
+
 ```
 
 ## Usage
