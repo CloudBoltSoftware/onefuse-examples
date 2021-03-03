@@ -5,6 +5,7 @@ Ignore the following
 .backup
 .terraform
 .tfstate.backup
+.log
 terraform.tfstate
 terraform.tfstate.backup
 .tfvars
