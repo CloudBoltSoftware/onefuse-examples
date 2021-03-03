@@ -26,29 +26,8 @@ variable "onefuse_verify_ssl" {
   default = false
 }
 
-variable "domain" {
-  type = string
-  default = "sovlabs.net"
-}
-
-variable "workspace_url" {
-  type = string
-  default = "" // Default
-}
-
-variable "username" {
-  type = string
-  default = "" // Default
-}
-
-variable "firstname" {
-  type = string
-  default = "" // Default
-}
-
-variable "lastname" {
-  type = string
-  default = "" // Default
+variable "template_properties" {
+  type = map
 }
 
 variable "policy" {

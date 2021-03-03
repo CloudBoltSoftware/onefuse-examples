@@ -1,4 +1,8 @@
-policy = ""
+ipam_policy = ""
+naming_policy = ""
+ad_policy = ""
+dns_policy = ""
+script_policy = ""
 template_properties = {
       "prop1"        = "value1"
       "prop2"        = "value2"

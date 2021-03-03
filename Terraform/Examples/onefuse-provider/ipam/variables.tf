@@ -24,32 +24,14 @@ variable "onefuse_verify_ssl" {
   default = false
 }
 
-variable "workspace_url" {
-  type = string
-  default = "" // Default
-}
-
 variable "hostname" {
   type = string
 }
 
 variable "template_properties" {
   type = map
-  default = {
-      "nameEnv"               = "p"
-      "nameOS"         	      = "w"
-      "nameDatacenter"        = "por"
-      "nameApp"               = "ap"
-      "nameLocation"          = "atl"
-      "nameGroup"             = "pp"
-      "ouGroup"               = "PiedPiper"
-      "ouEnv"                 = "PRD"
-      "dnsSuffix"             = "infoblox851.sovlabs.net"
-      "sgEnv"                 = "prod"
-  }
 }
 
 variable "policy" {
   type = string
-  default = "" // Default
 }

@@ -32,7 +32,6 @@ resource "onefuse_ipam_record" "ipam-record" {
     
     hostname = var.hostname
     policy_id = data.onefuse_ipam_policy.policy.id
-    workspace_url = var.workspace_url
     template_properties = var.template_properties
 }
 

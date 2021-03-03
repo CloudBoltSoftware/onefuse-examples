@@ -59,7 +59,6 @@ resource "onefuse_microsoft_ad_computer_account" "computer" {
     
     name = onefuse_naming.name.name
     policy_id = data.onefuse_ad_policy.policy.id
-    workspace_url = var.workspace_url
     template_properties = var.template_properties
 }
 
@@ -68,7 +67,6 @@ resource "onefuse_ipam_record" "ipam-record" {
     
     hostname = onefuse_naming.name.name
     policy_id = data.onefuse_ipam_policy.policy.id
-    workspace_url = var.workspace_url
     template_properties = var.template_properties
 
 lifecycle {
@@ -84,7 +82,6 @@ resource "onefuse_dns_record" "dns-record" {
     
     name = onefuse_naming.name.name
     policy_id = data.onefuse_dns_policy.policy.id
-    workspace_url = var.workspace_url
     zones = [onefuse_naming.name.dns_suffix]
     value = onefuse_ipam_record.ipam-record.ip_address
     template_properties = var.template_properties

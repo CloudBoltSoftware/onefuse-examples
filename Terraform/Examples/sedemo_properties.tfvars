@@ -1,4 +1,3 @@
-policy = "machine"
 template_properties = {
       "nameEnv"               = "p"
       "nameOS"         	      = "w"
@@ -10,4 +9,8 @@ template_properties = {
       "ouEnv"                 = "PRD"
       "dnsSuffix"             = "infoblox851.sovlabs.net"
       "sgEnv"                 = "prod"
+      "username"              = "sidtestuser" 
+      "firstname"             = "sidtes"
+      "lastname"              = "user"
+      "domain"                = "sovlabs.net"
   }

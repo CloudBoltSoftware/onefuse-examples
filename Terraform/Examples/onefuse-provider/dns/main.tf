@@ -32,7 +32,6 @@ resource "onefuse_dns_record" "dns-record" {
     
     name = var.hostname
     policy_id = data.onefuse_dns_policy.policy.id
-    workspace_url = var.workspace_url
     zones = [var.dns_zones]
     value = var.ip_address
     template_properties = var.template_properties

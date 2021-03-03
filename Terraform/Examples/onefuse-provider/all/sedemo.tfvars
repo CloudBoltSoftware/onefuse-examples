@@ -1,0 +1,5 @@
+ipam_policy = "atlprod"
+naming_policy = "machine"
+ad_policy = "prod"
+dns_policy = "prod"
+script_policy = "add_ad_user"

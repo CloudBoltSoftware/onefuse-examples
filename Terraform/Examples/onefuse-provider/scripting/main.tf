@@ -29,13 +29,7 @@ data "onefuse_scripting_policy" "policy" {
 // Onefuse Scripting Deployment
 resource "onefuse_scripting_deployment" "script" {
     policy_id = data.onefuse_scripting_policy.policy.id
-    workspace_url = var.workspace_url
-    template_properties = {
-        "username"        = var.username 
-        "firstname"       = var.firstname
-        "lastname"        = var.lastname
-        "domain"          = var.domain
-    }
+    template_properties = var.template_properties
 }
 
 // Output Results for OneFuse resources

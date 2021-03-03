@@ -30,9 +30,8 @@ data "onefuse_ad_policy" "policy" {
 // OneFuse Resource for AD Computer Account
 resource "onefuse_microsoft_ad_computer_account" "computer" {
     
-    name = var.name
+    name = var.hostname
     policy_id = data.onefuse_ad_policy.policy.id
-    workspace_url = var.workspace_url
     template_properties = var.template_properties
 }
 

@@ -1,4 +1,1 @@
-policy = "machine"
-username = "sidlabtest"
-firstname = "SidLab"
-lastname = "Test"
+policy = "add_ad_user"
