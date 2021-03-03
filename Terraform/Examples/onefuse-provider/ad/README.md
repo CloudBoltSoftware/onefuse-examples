@@ -21,11 +21,11 @@ onfuse_address = ""
 onefuse_port = ""
 onefuse_user = ""
 onefuse_password = ""
-template_properties = ""
 
 //Resource Inputs
 policy = ""
 hostname = ""
+template_properties = ""
 
 
 //Rename sample.tfvars_sample -> sample.tfvars and fill out the appropriate values.
