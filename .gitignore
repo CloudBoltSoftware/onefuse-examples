@@ -11,3 +11,4 @@ terraform.tfstate.backup
 variables.sh
 .terraform.lock.hcl
 crash.log
+.terraform.tfstate.lock.info
