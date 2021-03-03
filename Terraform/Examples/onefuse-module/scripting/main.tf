@@ -1,4 +1,4 @@
-//OneFuse Naming Terraform Module
+//OneFuse Scripting Terraform Module
 module "script" {
     source = "github.com/CloudBoltSoftware/terraform-demo.git/modules/onefuse//scripting"
     policy = "add_ad_user"
