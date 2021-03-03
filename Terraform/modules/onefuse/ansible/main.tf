@@ -42,15 +42,3 @@ resource "onefuse_ansible_tower_deployment" "at_job" {
 locals {
     hostname = "pp-atlplap054.infoblox851.sovlabs.net"
 }
-
-output "ansible_output" {
-  value = jsondecode(onefuse_ansible_tower_deployment.at_job.provisioning_job_results)
-}
-
-output "ansible_hosts" {
-  value = onefuse_ansible_tower_deployment.at_job.hosts
-}
-
-output "ansible_inventory" {
-  value = onefuse_ansible_tower_deployment.at_job.inventory_name
-}
