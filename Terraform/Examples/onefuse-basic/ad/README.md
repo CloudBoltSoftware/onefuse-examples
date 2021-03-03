@@ -39,6 +39,6 @@ Usage examples of how to consume OneFuse Terraform Provider
 ```
 terraform init
 terraform plan -var="hostname=testname" -var="policy=policyname"
-terraform apply --auto-approve -var="name=testname" -var="policy=policyname"
-terraform destroy --auto-approve -var="name=testname" -var="policy=policyname"
+terraform apply --auto-approve -var="hostname=testname" -var="policy=policyname"
+terraform destroy --auto-approve -var="hostname=testname" -var="policy=policyname"
 ```

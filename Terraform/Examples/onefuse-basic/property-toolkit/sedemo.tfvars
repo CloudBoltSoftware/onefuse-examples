@@ -1,0 +1,1 @@
+property_set = "sps_globalproperties"
