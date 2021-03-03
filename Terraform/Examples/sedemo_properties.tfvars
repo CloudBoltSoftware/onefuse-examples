@@ -10,7 +10,7 @@ template_properties = {
       "dnsSuffix"             = "infoblox851.sovlabs.net"
       "sgEnv"                 = "prod"
       "username"              = "sidtestuser" 
-      "firstname"             = "sidtes"
+      "firstname"             = "sidtest"
       "lastname"              = "user"
       "domain"                = "sovlabs.net"
   }

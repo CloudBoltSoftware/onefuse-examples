@@ -32,6 +32,7 @@ onefuse_password = ""
 //Resource Inputs
 policy = ""
 hostname = ""
+template_properties = ""
 
 
 //Rename sample.tfvars_sample -> sample.tfvars and fill out the appropriate values.
@@ -57,6 +58,6 @@ Usage examples of how to consume OneFuse Terraform Module
 ```
 terraform init
 terraform plan -var="hostname=testname" -var="policy=policy_name"
-terraform apply --auto-approve -var="hostnamename=testname" -var="policy=policy_name"
+terraform apply --auto-approve -var="hostname=testname" -var="policy=policy_name"
 terraform destroy --auto-approve -var="hostname=testname" -var="policy=policy_name"
 ```

@@ -25,11 +25,6 @@ variable "onefuse_verify_ssl" {
   default = false
 }
 
-variable "workspace_url" {
-  type = string
-  default = "" // Default
-}
-
 // Begin module inputs
 variable "template_properties" {
 type = map
