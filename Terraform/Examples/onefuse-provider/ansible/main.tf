@@ -43,6 +43,7 @@ resource "onefuse_ansible_tower_deployment" "job" {
 locals {
 fqdn = format("%s.%s", var.hostname, var.dns_suffix)
 }
+
 output "ansible_output" {
   value = jsondecode(onefuse_ansible_tower_deployment.job.provisioning_job_results)
 }

@@ -25,7 +25,7 @@ onefuse_password = ""
 //Resource Inputs
 policy = ""
 hostname = ""
-dns_zones = ""
+dns_zsuffix = ""
 ip_address = ""
 template_properties = ""
 
