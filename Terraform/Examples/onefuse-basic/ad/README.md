@@ -24,6 +24,7 @@ onefuse_password = ""
 
 //Resource Inputs
 policy = ""
+hostname = ""
 ```
 
 ## Usage
