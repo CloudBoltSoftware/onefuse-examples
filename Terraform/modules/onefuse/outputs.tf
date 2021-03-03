@@ -39,5 +39,5 @@ output "fqdn" {
 }
 
 output "ad_ou" {
-  value = module.computer.ad_ou
+  value = module.ad_computer.ad_ou
 }
