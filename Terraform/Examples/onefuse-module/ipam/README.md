@@ -32,6 +32,16 @@ vsphere_user = ""
 vsphere_password = ""
 ```
 
+## Files
+
+```
+main.tf = Main configuration file consuming OneFuse Terraform Module
+output.tf = Defines the outputs from the configuration
+provider.tf = Where all the provider blocks are configured
+properties.tf = Where proeprty toolkit operations are configured
+variables.tf = Inputs and default variable values
+```
+
 ## Usage
 
 ### /examples/onefuse-module
