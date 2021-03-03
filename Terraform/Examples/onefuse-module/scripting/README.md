@@ -24,7 +24,6 @@ onefuse_password = ""
 
 //Resource Inputs
 policy = ""
-hostname = ""
 
 //Rename sample.tfvars_sample -> sample.tfvars and fill out the appropriate values.
 terraform apply --auto-approve -var-file="sample.tfvars"
@@ -33,13 +32,13 @@ terraform apply --auto-approve -var-file="sample.tfvars"
 
 ## Usage
 
-### /examples/onefuse-basic
+### /examples/onefuse-module
 
 Usage examples of how to consume OneFuse Terraform Provider
 
 ```
 terraform init
-terraform plan -var="hostname=testname" -var="policy=policyname"
-terraform apply --auto-approve -var="hostname=testname" -var="policy=policyname"
-terraform destroy --auto-approve -var="hostname=testname" -var="policy=policyname"
+terraform plan
+terraform apply --auto-approve -var="policy=policyname"
+terraform destroy --auto-approve
 ```

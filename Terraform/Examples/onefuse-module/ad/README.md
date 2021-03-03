@@ -11,10 +11,7 @@ TF_VAR_onefuse_port
 TF_VAR_onefuse_user
 TF_VAR_onefuse_password
 
-//vSphere Provider Info
-TF_VAR_vsphere_server
-TF_VAR_vsphere_user
-TF_VAR_vsphere_password
+
 ```
 
 ## terraform.tfvars example
@@ -26,10 +23,19 @@ onefuse_port = ""
 onefuse_user = ""
 onefuse_password = ""
 
-//vSphere Provider Info
-vsphere_server = ""
-vsphere_user = ""
-vsphere_password = ""
+//OneFuse Provider Info
+onfuse_address = ""
+onefuse_port = ""
+onefuse_user = ""
+onefuse_password = ""
+
+//Resource Inputs
+policy = ""
+hostname = ""
+
+
+//Rename sample.tfvars_sample -> sample.tfvars and fill out the appropriate values.
+terraform apply --auto-approve -var-file="sample.tfvars"
 ```
 
 ## Files
@@ -50,7 +56,7 @@ Usage examples of how to consume OneFuse Terraform Module
 
 ```
 terraform init
-terraform plan -var="hostname=testname" 
-terraform apply --auto-approve -var="name=testname"
-terraform destroy --auto-approve -var="name=testname"
+terraform plan -var="hostname=testname" -var="policy=policy_name"
+terraform apply --auto-approve -var="hostnamename=testname" -var="policy=policy_name"
+terraform destroy --auto-approve -var="hostname=testname" -var="policy=policy_name"
 ```
