@@ -11,10 +11,6 @@ TF_VAR_onefuse_port
 TF_VAR_onefuse_user
 TF_VAR_onefuse_password
 
-//vSphere Provider Info
-TF_VAR_vsphere_server
-TF_VAR_vsphere_user
-TF_VAR_vsphere_password
 ```
 
 ## terraform.tfvars example
