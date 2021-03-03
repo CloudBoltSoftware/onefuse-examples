@@ -36,21 +36,6 @@ variable "workspace_url" {
   default = "" // Default
 }
 
-variable "username" {
-  type = string
-  default = "" // Default
-}
-
-variable "firstname" {
-  type = string
-  default = "" // Default
-}
-
-variable "lastname" {
-  type = string
-  default = "" // Default
-}
-
 variable "template_properties" {
   type = map
   default = {
@@ -64,6 +49,10 @@ variable "template_properties" {
       "ouEnv"                 = "PRD"
       "dnsSuffix"             = "infoblox851.sovlabs.net"
       "sgEnv"                 = "prod"
+      "username"              = "sidtest"
+      "firstname"             = "sid"
+      "lastname"              = "test"
+      "domain"                = "sovlabs.net"
   }
 }
 
