@@ -28,7 +28,7 @@ data "onefuse_ansible_tower_policy" "policy" {
 }
 
 // Onefuse Ansible Tower Deployment
-resource "onefuse_ansible_tower_deployment" "at_job" {
+resource "onefuse_ansible_tower_deployment" "job" {
 
   policy_id = data.onefuse_ansible_tower_policy.policy.id
   hosts = [ local.hostname ] 
@@ -44,13 +44,13 @@ locals {
 }
 
 output "ansible_output" {
-  value = jsondecode(onefuse_ansible_tower_deployment.at_job.provisioning_job_results)
+  value = jsondecode(onefuse_ansible_tower_deployment.job.provisioning_job_results)
 }
 
 output "ansible_hosts" {
-  value = onefuse_ansible_tower_deployment.at_job.hosts
+  value = onefuse_ansible_tower_deployment.job.hosts
 }
 
 output "ansible_inventory" {
-  value = onefuse_ansible_tower_deployment.at_job.inventory_name
+  value = onefuse_ansible_tower_deployment.job.inventory_name
 }
