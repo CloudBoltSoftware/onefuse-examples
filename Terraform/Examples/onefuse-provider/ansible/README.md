@@ -25,6 +25,7 @@ onefuse_password = ""
 //Resource Inputs
 policy = ""
 hostname = ""
+dns_suffix = ""
 template_properties = ""
 
 //Rename sample.tfvars_sample -> sample.tfvars and fill out the appropriate values.

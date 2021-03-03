@@ -31,14 +31,18 @@ data "onefuse_ansible_tower_policy" "policy" {
 resource "onefuse_ansible_tower_deployment" "job" {
 
   policy_id = data.onefuse_ansible_tower_policy.policy.id
-  hosts = [ var.hostname ] 
+  hosts = [ local.fqdn ]
+  limit = local.fqdn
   template_properties = var.template_properties
-    timeouts {
+  timeouts {
       create = "12m"
       delete = "3m"
     }
 }
 
+locals {
+fqdn = format("%s.%s", var.hostname, var.dns_suffix)
+}
 output "ansible_output" {
   value = jsondecode(onefuse_ansible_tower_deployment.job.provisioning_job_results)
 }

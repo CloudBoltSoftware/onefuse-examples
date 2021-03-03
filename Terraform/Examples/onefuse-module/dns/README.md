@@ -27,6 +27,7 @@ policy = ""
 hostname = ""
 dns_zones = ""
 ip_address = ""
+template_properties = ""
 
 //Rename sample.tfvars_sample -> sample.tfvars and fill out the appropriate values.
 terraform apply --auto-approve -var-file="sample.tfvars"

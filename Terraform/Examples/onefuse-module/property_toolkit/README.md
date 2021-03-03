@@ -24,6 +24,7 @@ onefuse_password = ""
 
 //Resource Inputs
 property_set = ""
+template_properties = ""
 
 //Rename sample.tfvars_sample -> sample.tfvars and fill out the appropriate values.
 terraform apply --auto-approve -var-file="sample.tfvars"

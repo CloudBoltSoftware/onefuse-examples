@@ -32,7 +32,7 @@ resource "onefuse_dns_record" "dns-record" {
     
     name = var.hostname
     policy_id = data.onefuse_dns_policy.policy.id
-    zones = [var.dns_zones]
+    zones = [var.dns_suffix]
     value = var.ip_address
     template_properties = var.template_properties
 }
