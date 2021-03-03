@@ -39,6 +39,6 @@ resource "onefuse_scripting_deployment" "script" {
 }
 
 // Output Results for OneFuse resources
-output "hostname" {
+output "script_output" {
   value = jsondecode(onefuse_scripting_deployment.script.provisioning_details)
 }
