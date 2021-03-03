@@ -1,4 +1,4 @@
-# Terraform Basic Examples
+# Terraform Provider Examples
 
 The examples contained in this repo are tied to the OneFuse Terraform provider.  For more information or to assistance with the OneFuse Terraform provider or examples please visit the [OneFuse Community](https://onefuse.cloudbolt.io/).
 
@@ -21,6 +21,7 @@ onfuse_address = ""
 onefuse_port = ""
 onefuse_user = ""
 onefuse_password = ""
+template_properties = ""
 
 //Resource Inputs
 policy = ""
