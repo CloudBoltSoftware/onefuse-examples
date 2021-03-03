@@ -26,10 +26,11 @@ onefuse_port = ""
 onefuse_user = ""
 onefuse_password = ""
 
-//vSphere Provider Info
-vsphere_server = ""
-vsphere_user = ""
-vsphere_password = ""
+//Resource Inputs
+policy = ""
+username = ""
+firstname = ""
+lastname = ""
 ```
 
 ## Usage
