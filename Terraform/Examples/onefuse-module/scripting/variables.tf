@@ -31,6 +31,7 @@ type = map
 default = {
       "username"        = "sidtestusr"
       "firstname"       = "sid"
-      "lastname"        = "testusr"    
+      "lastname"        = "testusr"
+      "domain"          = "sovlabs.net"
   }
 }
