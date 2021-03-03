@@ -9,6 +9,8 @@ Ignore the following
 terraform.tfstate
 terraform.tfstate.backup
 .tfvars
+*.tfvars
+*/**/.tfvars
 variables.sh
 .terraform.lock.hcl
 crash.log
