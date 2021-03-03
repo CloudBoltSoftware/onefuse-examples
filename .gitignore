@@ -1,6 +1,5 @@
 Ignore the following
 .exe
-.json
 .tfstate
 .backup
 .terraform
