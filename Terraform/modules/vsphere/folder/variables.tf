@@ -1,0 +1,3 @@
+variable "path" {
+  type = string
+}
