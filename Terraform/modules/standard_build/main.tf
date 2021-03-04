@@ -1,7 +1,7 @@
 module "onefuse" {
     source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse"
     name_policy         = var.name_policy
-    ipam_policy         = format("%s%s", module.location.properties.ipamLocation, module.environment.properties.ipamEnv
+    ipam_policy         = format("%s%s", module.location.properties.ipamLocation, module.environment.properties.ipamEnv)
     dns_policy          = module.environment.properties.dnsPolicy
     ad_policy           = module.environment.properties.adPolicy
     template_properties = var.template_properties
