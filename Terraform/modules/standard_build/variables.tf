@@ -22,3 +22,6 @@ variable "group" {
 variable "size" {
   type = string
 }
+variable "location" {
+  type = string
+}
