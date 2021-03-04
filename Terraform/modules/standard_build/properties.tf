@@ -37,7 +37,7 @@ module "environment" {
  module "globalproperties" {
   source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ptk"
   property_set = "sps_globalproperties"
-  template_properties = merge(var.template_properties, local.IPv4_Netmask)
+  template_properties = var.template_properties
 }
 
 // Render the template
