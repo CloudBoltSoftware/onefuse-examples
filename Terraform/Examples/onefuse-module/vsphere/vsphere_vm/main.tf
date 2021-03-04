@@ -10,7 +10,7 @@ module "onefuse" {
 module "vm" {
   source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/vsphere//vm"
   hostname      = module.onefuse.hostname
-  template      = module.linux.properties.OneFuse_TF_Props.template
+  template      = module.os.properties.OneFuse_TF_Props.template
   ip_address    = module.onefuse.ip_address
   network       = module.onefuse.network
   gateway       = module.onefuse.gateway

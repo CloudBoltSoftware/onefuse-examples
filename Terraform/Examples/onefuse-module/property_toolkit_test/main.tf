@@ -1,16 +1,11 @@
-module "size" {
-  source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ptk"
-  property_set = "sps_size_small"
-  template_properties = var.template_properties
+data "onefuse_static_property_set" "size" {
+  name = "sps_size_medium"
 }
-
-
-
 locals  {
 
 rendered_values = {
-    cpuCount = module.size.properties.cpuCount
-    memoryGB = module.size.properties.memoryGB
+    cpuCount = data.onefuse_static_property_set.size.properties.cpuCount
+    memoryGB = data.onefuse_static_property_set.size.properties.memoryGB
   }
 }
 
