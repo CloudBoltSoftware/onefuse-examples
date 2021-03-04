@@ -12,7 +12,7 @@ module "environment" {
 
  module "location" {
   source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ptk"
-  property_set = format("sps_location_%s", var.application)
+  property_set = format("sps_location_%s", var.location)
   template_properties = var.template_properties
 } 
 
