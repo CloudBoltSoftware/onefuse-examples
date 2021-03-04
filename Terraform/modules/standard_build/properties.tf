@@ -10,6 +10,12 @@ module "environment" {
   template_properties = var.template_properties
 }  
 
+ module "location" {
+  source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ptk"
+  property_set = "sps_location_atl"
+  template_properties = var.template_properties
+}
+
  module "os" {
   source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ptk"
   property_set = module.application.properties.OneFuse_SPS_OS
