@@ -37,7 +37,7 @@ module "environment" {
  module "globalproperties" {
   source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ptk"
   property_set = "sps_globalproperties"
-  template_properties = merge(var.template_properties, var.local_template_properties)
+  template_properties = merge(var.template_properties, local.IPv4_Netmask)
 }
 
 // Render the template
@@ -49,11 +49,4 @@ locals  {
   vSphereFolder = module.globalproperties.properties.folderName
   IPv4_Netmask = module.globalproperties.properties.OneFuse_TF_Props.IPv4_Netmask
   hostname = format("%s.%s", module.onefuse.hostname, module.onefuse.dns_suffix)
-}
-
-variable "local_template_properties" {
-type = map
-default = {
-  subnet = local.IPv4_Netmask
-  }
 }
