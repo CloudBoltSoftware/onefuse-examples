@@ -16,7 +16,7 @@ module "environment" {
   template_properties = var.template_properties
 } 
 
- module "os {
+ module "os" {
   source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ptk"
   property_set = module.application.properties.OneFuse_SPS_OS
   template_properties = var.template_properties
