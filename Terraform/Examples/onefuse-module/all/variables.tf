@@ -49,23 +49,3 @@ variable "dns_policy" {
   type = string
   default = "prod"
 }
-
-variable "name_count" {
-  type = number
-  default = 0
-}
-
-variable "ipam_count" {
-  type = number
-  default = 0
-}
-
-variable "dns_count" {
-  type = number
-  default = 0
-}
-
-variable "ad_count" {
-  type = number
-  default = 0
-}

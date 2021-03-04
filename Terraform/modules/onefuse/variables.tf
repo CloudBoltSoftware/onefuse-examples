@@ -17,23 +17,3 @@ variable "dns_policy" {
 variable "template_properties" {
   type = map
 }
-
-variable "name_count" {
-  type = number
-  default = 0
-}
-
-variable "ipam_count" {
-  type = number
-  default = 0
-}
-
-variable "dns_count" {
-  type = number
-  default = 0
-}
-
-variable "ad_count" {
-  type = number
-  default = 0
-}
