@@ -27,7 +27,7 @@ data "vsphere_virtual_machine" "template" {
 
 
 #Virtual Machine Resource
-resource "vsphere_virtual_machine" "vsphereweb1" {
+resource "vsphere_virtual_machine" "vm" {
 
 
     // Use OneFuse generated name for VM hostname and domain

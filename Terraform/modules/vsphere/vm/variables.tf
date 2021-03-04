@@ -37,3 +37,7 @@ variable "memMb" {
 variable "subnet" {
   type = string
 }
+
+variable "netmask" {
+  type = string
+}

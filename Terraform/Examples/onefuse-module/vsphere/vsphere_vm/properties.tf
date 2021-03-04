@@ -29,7 +29,7 @@ data "onefuse_rendered_template" "global_rendered" {
     template_properties = {
       "folderGroup"      = data.onefuse_static_property_set.group.properties.folderGroup
       "folderEnv"        = data.onefuse_static_property_set.environment.properties.folderEnv
-      "subnet"           = onefuse_ipam_record.ipam-record.subnet
+      "subnet"           = module.onefuse.subnet
     }
 }
 
@@ -38,7 +38,7 @@ locals  {
   memMb = "2048"
   vSphereFolder = jsondecode(data.onefuse_rendered_template.global_rendered.value).folderName
   IPv4_Netmask = jsondecode(data.onefuse_rendered_template.global_rendered.value).OneFuse_TF_Props.IPv4_Netmask
-  hostname = format("%s.%s", onefuse_naming.name.name, onefuse_naming.name.dns_suffix)
+  hostname = format("%s.%s", module.onefuse.name, module.onefuse.dns_suffix)
 }
 
 output "cpu" {
@@ -46,7 +46,7 @@ output "cpu" {
 }
 
 output "mem" {
-  value = local.mem
+  value = local.memMb
 }
 
 output "vSphere_folder" {

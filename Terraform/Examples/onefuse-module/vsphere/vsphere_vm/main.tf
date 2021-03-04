@@ -10,13 +10,13 @@ module "onefuse" {
 module "vm" {
   source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/vsphere//vm"
   hostname      = module.onefuse.hostname
-  template      = module.onefuse.template
+  template      = data.onefuse_static_property_set.linux.properties.template
   ip_address    = module.onefuse.ip_address
   network       = module.onefuse.network
-  gateway       = vmodule.onefuse.gateway
+  gateway       = module.onefuse.gateway
   dns_suffix    = module.onefuse.dns_suffix
   folder        = "VRM-BACKUPEXCLUDED/pre-sales-demo/"
   subnet        = local.IPv4_Netmask
   cpu           = local.cpu
-  memMb         = locaL.memMb
+  memMb         = local.memMb
 }
