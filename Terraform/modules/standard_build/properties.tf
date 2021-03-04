@@ -1,22 +1,16 @@
 module "environment" {
   source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ptk"
-  property_set = format("sps_env_%s", var.environment)
+  property_set = "sps_env_prod"
   template_properties = var.template_properties
 }  
 
  module "application" {
   source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ptk"
-  property_set = format("sps_app_%s", var.application)
+  property_set = "sps_app_wordpress"
   template_properties = var.template_properties
-} 
+}  
 
- module "location" {
-  source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ptk"
-  property_set = format("sps_location_%s", var.location)
-  template_properties = var.template_properties
-} 
-
- module "os" {
+ module "linux" {
   source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ptk"
   property_set = module.application.properties.OneFuse_SPS_OS
   template_properties = var.template_properties
@@ -24,29 +18,35 @@ module "environment" {
 
  module "group" {
   source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ptk"
-  property_set = format("sps_group_%s", var.group)
+  property_set = "sps_group_piedpiper"
   template_properties = var.template_properties
 } 
 
- module "size" {
+data "onefuse_static_property_set" "size" {
+  name = "sps_size_small"
+}
+ module "rendered_size" {
   source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ptk"
-  property_set = format("sps_size_%s", var.size)
-  template_properties = var.template_properties
+  property_set = "sps_size_small"
+  template_properties = merge(var.template_properties, local.rendered_values)
 }
 
  module "globalproperties" {
   source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//ptk"
   property_set = "sps_globalproperties"
-  template_properties = var.template_properties
+  template_properties = merge(var.template_properties, local.rendered_values)
 }
 
-// Render the template
-
-
 locals  {
-  cpu = module.size.properties.OneFuse_TF_Props.cpu
-  memMb = module.size.properties.OneFuse_TF_Props.memMb
+  cpu = module.rendered_size.properties.OneFuse_TF_Props.cpu
+  memMb = module.rendered_size.properties.OneFuse_TF_Props.memMb
+  fqdn = format("%s.%s", module.onefuse.hostname, module.onefuse.dns_suffix)
   vSphereFolder = module.globalproperties.properties.folderName
   IPv4_Netmask = module.globalproperties.properties.OneFuse_TF_Props.IPv4_Netmask
-  hostname = format("%s.%s", module.onefuse.hostname, module.onefuse.dns_suffix)
+
+rendered_values = {
+    cpuCount = data.onefuse_static_property_set.size.properties.cpuCount
+    memoryGB = data.onefuse_static_property_set.size.properties.memoryGB
+    subnet = module.onefuse.subnet
+  }
 }

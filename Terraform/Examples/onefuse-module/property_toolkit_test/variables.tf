@@ -25,36 +25,6 @@ variable "onefuse_verify_ssl" {
   default = false
 }
 
-// Begin module inputs
 variable "template_properties" {
 type = map
-}
-
-
-variable "name_policy" {
-  type = string
-}
-
-variable "ad_policy" {
-  type = string
-}
-
-variable "ipam_policy" {
-  type = string
-}
-
-variable "dns_policy" {
-  type = string
-}
-
-variable "vsphere_user" {
-  type = string
-}
-
-variable "vsphere_password" {
-  type = string
-}
-
-variable "vsphere_server" {
-  type  = string
 }
