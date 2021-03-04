@@ -16,7 +16,7 @@ module "vm" {
   gateway       = module.onefuse.gateway
   dns_suffix    = module.onefuse.dns_suffix
   folder        = "VRM-BACKUPEXCLUDED/pre-sales-demo/"
-  subnet        = local.IPv4_Netmask
+  netmask        = local.IPv4_Netmask
   cpu           = local.cpu
   memMb         = local.memMb
 }

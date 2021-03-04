@@ -33,11 +33,6 @@ variable "cpu" {
 variable "memMb" {
   type = string
 }
-
-variable "subnet" {
-  type = string
-}
-
 variable "netmask" {
   type = string
 }
