@@ -27,7 +27,6 @@ ipam_policy = ""
 naming_policy = ""
 ad_policy = ""
 dns_policy = ""
-script_policy = ""
 template_properties = ""
 
 //Rename sample.tfvars_sample -> sample.tfvars and fill out the appropriate values.

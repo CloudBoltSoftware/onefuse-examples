@@ -42,11 +42,6 @@ data "onefuse_dns_policy" "policy" {
   name = var.dns_policy
 }
 
-// OneFuse Data Source for Script Policy to lookup policy ID
-data "onefuse_scripting_policy" "policy" {
-  name = var.script_policy
-}
-
 // OneFuse Resource for Naming Record
 resource "onefuse_naming" "name" {
   naming_policy_id        = data.onefuse_naming_policy.policy.id
@@ -84,12 +79,6 @@ resource "onefuse_dns_record" "dns-record" {
     policy_id = data.onefuse_dns_policy.policy.id
     zones = [onefuse_naming.name.dns_suffix]
     value = onefuse_ipam_record.ipam-record.ip_address
-    template_properties = var.template_properties
-}
-
-// Onefuse Script Run
-resource "onefuse_scripting_deployment" "script" {
-    policy_id = data.onefuse_scripting_policy.policy.id
     template_properties = var.template_properties
 }
 
@@ -132,9 +121,4 @@ output "fqdn" {
 
 output "ad_ou" {
   value = onefuse_microsoft_ad_computer_account.computer.final_ou
-}
-
-// Output Results for OneFuse script
-output "script_output" {
-  value = jsondecode(onefuse_scripting_deployment.script.provisioning_details)
 }
