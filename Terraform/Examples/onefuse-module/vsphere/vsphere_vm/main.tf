@@ -8,7 +8,7 @@ module "onefuse" {
 }
 
 module "vm" {
-  source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/vsphere//vm"
+  source = "github.com/CloudBoltSoftware/terraform-module-onefuse.git//vm"
   hostname      = module.onefuse.hostname
   template      = module.os.properties.OneFuse_TF_Props.template
   ip_address    = module.onefuse.ip_address

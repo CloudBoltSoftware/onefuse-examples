@@ -1,6 +1,6 @@
 //OneFuse DNS Terraform Module
 module "dns" {
-    source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse//dns"
+    source = "github.com/CloudBoltSoftware/terraform-module-onefuse.git//dns"
     policy = var.policy
     hostname = var.hostname
     ip_address = var.ip_address
