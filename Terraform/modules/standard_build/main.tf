@@ -1,5 +1,5 @@
 module "onefuse" {
-    source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse"
+    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git"
     name_policy         = var.name_policy
     ipam_policy         = format("%s%s", module.location.properties.ipamLocation, module.environment.properties.ipamEnv)
     dns_policy          = module.environment.properties.dnsPolicy
