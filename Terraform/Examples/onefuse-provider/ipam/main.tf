@@ -53,7 +53,7 @@ output "network" {
 }
 
 output "subnet" {
-  value = onefuse_ipam_record.ipam-record.network
+  value = onefuse_ipam_record.ipam-record.subnet
 }
 
 output "primary_dns" {
