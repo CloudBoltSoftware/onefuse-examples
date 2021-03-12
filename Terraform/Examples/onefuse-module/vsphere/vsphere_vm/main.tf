@@ -1,5 +1,5 @@
 module "onefuse" {
-    source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/onefuse?ref=v1.2-beta.1"
+    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git?ref=v1.2-beta.1"
     name_policy         = var.name_policy
     ipam_policy         = var.ipam_policy
     dns_policy          = var.dns_policy
@@ -8,7 +8,7 @@ module "onefuse" {
 }
 
 module "vm" {
-  source = "github.com/CloudBoltSoftware/terraform-module-onefuse.git//vm"
+  source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/vsphere//vm"
   hostname      = module.onefuse.hostname
   template      = module.os.properties.OneFuse_TF_Props.template
   ip_address    = module.onefuse.ip_address
