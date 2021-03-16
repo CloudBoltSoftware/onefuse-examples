@@ -1,5 +1,5 @@
 module "onefuse" {
-    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git"
+    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git?ref=v1.2-beta.1"
  
  // Policy assignments
     name_policy = var.name_policy
