@@ -32,20 +32,25 @@ type = map
 
 variable "name_policy" {
   type = string
-  default = "machine"
+  default = ""
 }
 
 variable "ad_policy" {
   type = string
-  default = "prod"
+  default = ""
+}
+
+variable "use_ad" {
+  type = string
+  default = ""
 }
 
 variable "ipam_policy" {
   type = string
-  default = "atlprod"
+  default = ""
 }
 
 variable "dns_policy" {
   type = string
-  default = "prod"
+  default = ""
 }

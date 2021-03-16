@@ -35,7 +35,7 @@ output "secondary_dns" {
 }
 
 output "fqdn" {
-  value = format("%s.%s", module.onefuse.hostname, module.onefuse.dns_suffix)
+  value = module.onefuse.fqdn
 }
 
 output "ad_ou" {

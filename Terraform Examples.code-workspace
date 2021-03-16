@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "..\\terraform-module-onefuse"
+		},
+		{
+			"path": "..\\..\\scratch"
 		}
 	],
 	"settings": {}
