@@ -1,3 +1,5 @@
+ // Comment out the following for Terraform 0.12
+
  terraform {
   required_providers {
     onefuse = {
@@ -7,7 +9,9 @@
   }
   required_version = ">= 0.13"
 }
+// Comment out the above for Terraform 0.12
 
+ // Inititalize OneFuse Provider
 provider "onefuse" {
 
   scheme     = var.onefuse_scheme
@@ -18,19 +22,11 @@ provider "onefuse" {
   verify_ssl = var.onefuse_verify_ssl
 }
 
-data "onefuse_dns_policy" "policy" {
-  name = var.policy
+provider "vsphere" {
+  user           = var.vsphere_user
+  password       = var.vsphere_password
+  vsphere_server = var.vsphere_server
+
+  # If you have a self-signed cert
+  allow_unverified_ssl = true
 }
-
-resource "onefuse_dns_record" "dns-record" {
-    
-    name = var.hostname
-    policy_id = data.onefuse_dns_policy.policy.id
-    zones = [var.dnsSuffix]
-    value = var.ip_address
-    template_properties = var.template_properties
-}
-
-
-
-

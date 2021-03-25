@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "..\\..\\scratch"
+		},
+		{
+			"path": "..\\terraform-provider-onefuse"
 		}
 	],
 	"settings": {}

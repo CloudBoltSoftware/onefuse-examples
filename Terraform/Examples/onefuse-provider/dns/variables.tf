@@ -28,7 +28,7 @@ variable "ip_address" {
   type = string
 }
 
-variable "dns_zones" {
+variable "dnsSuffix" {
   type = string
 }
 
