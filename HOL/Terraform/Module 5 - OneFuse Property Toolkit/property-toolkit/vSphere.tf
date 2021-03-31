@@ -42,7 +42,20 @@ data "vsphere_virtual_machine" "template" {
 #Virtual Machine Resource
 resource "vsphere_virtual_machine" "vm" {
 depends_on = [onefuse_microsoft_ad_computer_account.computer]
+  lifecycle {
+    ignore_changes = [
+      folder,
+      name,
+      template_uuid,
+      host_name,
+      domain,
+      ipv4_address,
+      ipv4_netmask,
+      ipv4_gateway,
+      network_id
 
+      ]
+  }
     // Use OneFuse generated name for VM hostname and domain
     name = onefuse_naming.name.name //Name provided by OneFuse Naming
 

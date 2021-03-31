@@ -52,25 +52,20 @@ variable "vsphere_password" {
 
 variable "environment" {
   type = string
-  default = "prod" // Default
 }
 
 variable "location" {
   type = string
-  default = "east" // Default
 }
 
 variable "application" {
   type = string
-  default = "wordpress" // Default
 }
 
 variable "size" {
   type = string
-  default = "small" // Default
 }
 
 variable "compliance" {
   type = string
-  default = "sox" // Default
 }
