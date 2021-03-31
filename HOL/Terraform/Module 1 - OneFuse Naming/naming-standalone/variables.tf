@@ -35,6 +35,7 @@ variable "workspace_url" {
 
 
 //Deployment 1 Variables - Prod East
+/*
 variable "onefuse_template_properties" {
   type = map
   default = {
@@ -46,14 +47,14 @@ variable "onefuse_template_properties" {
       "dnsZone"                       = "prod.lab.local" //dev.lab.local or prod.lab.local
   }
 }
-
+*/
 
 //Deployment 2 Variables - Dev West
-/*
+
 variable "onefuse_template_properties" {
   type = map
   default = {
-      "nameEnvironment"               = "d"     //p for production or d for development
+//      "nameEnvironment"               = "d"     //p for production or d for development
       "nameLocation"                  = "w"     //e for East or w for West
       "nameApplication"               = "wp"    //wp for wordpress or iis for IIS
       "nameOS"         	              = "l"     //l for Linux or w for Windows
@@ -61,4 +62,3 @@ variable "onefuse_template_properties" {
       "dnsZone"                       = "dev.lab.local" //dev.lab.local or prod.lab.local
   }
 }
-*/
