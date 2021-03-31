@@ -7,7 +7,8 @@ module "vm" {
   compliance               = var.compliance
 }
 
-/*
+
+
 module "vm2" {
   source = "../property-toolkit"
   environment              = var.environment
@@ -16,4 +17,3 @@ module "vm2" {
   location                 = var.location
   compliance               = var.compliance
 }
-*/

@@ -45,16 +45,9 @@ depends_on = [onefuse_microsoft_ad_computer_account.computer]
   lifecycle {
     ignore_changes = [
       folder,
-      name,
-      template_uuid,
-      host_name,
-      domain,
-      ipv4_address,
-      ipv4_netmask,
-      ipv4_gateway,
-      network_id
-
-      ]
+      num_cpus,
+      memory,
+    ]
   }
     // Use OneFuse generated name for VM hostname and domain
     name = onefuse_naming.name.name //Name provided by OneFuse Naming

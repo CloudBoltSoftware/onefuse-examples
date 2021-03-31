@@ -45,7 +45,7 @@ output "vm_ad_ou" {
 
 
 
-/*
+
 output "vm2_hostname" {
   value = module.vm2.hostname
 }
@@ -90,4 +90,4 @@ output "vm2_vSphere_Folder" {
 output "vm2_ad_ou" {
   value = module.vm2.ad_ou
 }
-*/
+

@@ -60,6 +60,7 @@ variable "location" {
 
 variable "application" {
   type = string
+  default = "wordpress"
 }
 
 variable "size" {
@@ -68,4 +69,5 @@ variable "size" {
 
 variable "compliance" {
   type = string
+  default = "pci"
 }

@@ -1,0 +1,22 @@
+formatVersion: 1
+inputs:
+  oneFuseEndpoint:
+    type: string
+    title: OneFuse Endpoint
+    enum:
+      - onefuse
+resources:
+  Custom_onefuse_deploymentname_1:
+    type: Custom.onefuse.deploymentname
+    metadata:
+      layoutPosition:
+        - 0
+        - 0
+    properties:
+      policyName: deploymentNaming
+      endpointName: '${input.oneFuseEndpoint}'
+      templateProperties:
+        - key: nameEnvironment
+          value: d
+        - key: nameApplication
+          value: wp
