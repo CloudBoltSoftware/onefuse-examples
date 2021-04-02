@@ -11,6 +11,12 @@
 		},
 		{
 			"path": "..\\terraform-provider-onefuse"
+		},
+		{
+			"path": "..\\terraform-demo"
+		},
+		{
+			"path": "..\\WWT-HOL-internal"
 		}
 	],
 	"settings": {}

@@ -46,7 +46,7 @@ data "onefuse_rendered_template" "size" {
 locals  {
   cpu = jsondecode(data.onefuse_rendered_template.size.value).onefuse_platforms.terraform.general.cpu
   memMb = jsondecode(data.onefuse_rendered_template.size.value).onefuse_platforms.terraform.general.memMb
-  fqdn = format("%s.%s", module.vm.name, module.onefuse.dns_suffix)
+  fqdn = format("%s.%s", module.onefuse.hostname, module.onefuse.dns_suffix)
   vSphereFolder = module.globalproperties.properties.folderName
   IPv4_Netmask = module.globalproperties.properties.OneFuse_TF_Props.IPv4_Netmask
 

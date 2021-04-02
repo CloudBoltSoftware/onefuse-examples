@@ -23,8 +23,9 @@ module "vm" {
 
 module "ansible_job" {
     source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ansible?ref=v1.2-beta.1"
-    policy = var.policy
+    policy = var.ansible_policy
     hostname = local.fqdn
     limit = local.fqdn
     template_properties = var.template_properties
+    depends_on = [module.vm]
 }
