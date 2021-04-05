@@ -29,11 +29,11 @@ module "environment" {
 } 
 
 data "onefuse_static_property_set" "size" {
-  name = format("sps_size_%s", var.size
+  name = format("sps_size_%s", var.size)
 }
  module "rendered_size" {
   source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=v1.2-beta.1"
-  property_set = format("sps_size_%s", var.size
+  property_set = format("sps_size_%s", var.size)
   template_properties = merge(var.template_properties, local.rendered_values)
 }
 
