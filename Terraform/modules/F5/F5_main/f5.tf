@@ -15,21 +15,3 @@ resource "bigip_ltm_pool" "pool" {
     allow_snat = local.allow_snat
     load_balancing_mode = local.load_balancing_mode
 }
-
-resource "bigip_ltm_node" "node" {
-  name             = local.node
-  address          = onefuse_ipam_record.ipam-record.ip_address
-  connection_limit = local.node_connection_limit
-  description      = "Test-Node"
-  rate_limit       = local.node_rate_limit
-  fqdn {
-    address_family = local.node_address_family
-    interval       = "3000"
-  }
-}
-
-resource "bigip_ltm_pool_attachment" "attach_node" {
-  pool = bigip_ltm_pool.pool.name
-  node = format("%s:%s", bigip_ltm_node.node.name, local.node_port)
-  ratio = local.node_ratio
-}

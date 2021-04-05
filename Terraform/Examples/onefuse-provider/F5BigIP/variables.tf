@@ -37,6 +37,18 @@ variable "naming_policy" {
   type = string
 }
 
+variable "f5_dns_policy" {
+  type = string
+}
+
+variable "f5_ipam_policy" {
+  type = string
+}
+
+variable "f5_naming_policy" {
+  type = string
+}
+
 variable "ad_policy" {
   type = string
 }
@@ -44,7 +56,18 @@ variable "ad_policy" {
 variable "dns_policy" {
   type = string
 }
-
 variable "script_policy" {
+  type = string
+}
+
+variable "f5_hostname" {
+  type = string
+}
+
+variable "f5_username" {
+  type = string
+}
+
+variable "f5_password" {
   type = string
 }
