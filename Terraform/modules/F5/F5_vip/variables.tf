@@ -6,14 +6,10 @@ variable "name" {
   type = string
 }
 
-variable "description" {
+variable "pool_name" {
   type = string
 }
 
-variable "address" {
-  type = string
-}
-
-variable "pool" {
+variable "destination_address" {
   type = string
 }
