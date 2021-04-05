@@ -34,22 +34,6 @@ variable "naming_policy" {
   type = string
 }
 
-variable "f5_dns_policy" {
-  type = string
-}
-
-variable "f5_ipam_policy" {
-  type = string
-}
-
-variable "f5_naming_policy" {
-  type = string
-}
-
-variable "ad_policy" {
-  type = string
-}
-
 variable "dns_policy" {
   type = string
 }

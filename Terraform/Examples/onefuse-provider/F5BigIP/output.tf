@@ -34,15 +34,3 @@ output "secondary_dns" {
 output "machine_fqdn" {
   value = onefuse_naming.machine.id
 }
-
-output "F5_VIP_IP" {
-    value = onefuse_ipam_record.f5_ipam.ip_address
-}
-
-output "F5_FQDN" {
-    value = onefuse_naming.f5.id
-}
-
-output "F5_POOL_NAME" {
-    value = onefuse_naming.f5.name
-}

@@ -1,6 +1,6 @@
 module "f5vip" {
-    source = "git::https://https://github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/F5/F5_main"
-    f5sps = var.policy
+    source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/F5/F5_main"
+    f5sps = var.f5sps
     template_properties = var.template_properties
 }
 
