@@ -1,18 +1,18 @@
 module "environment" {
   source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=v1.2-beta.1"
-  property_set = "sps_env_prod"
+  property_set = format("sps_env_%s", var.environment)
   template_properties = var.template_properties
 }  
 
  module "application" {
   source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=v1.2-beta.1"
-  property_set = "sps_app_wordpress"
+  property_set = format("sps_app_%s", var.application)
   template_properties = var.template_properties
 }  
 
  module "location" {
   source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=v1.2-beta.1"
-  property_set = "sps_location_atl"
+  property_set = format("sps_loc_%s", var.location)
   template_properties = var.template_properties
 }
 
@@ -24,16 +24,16 @@ module "environment" {
 
  module "group" {
   source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=v1.2-beta.1"
-  property_set = "sps_group_piedpiper"
+  property_set = format("sps_group_%s", var.group)
   template_properties = var.template_properties
 } 
 
 data "onefuse_static_property_set" "size" {
-  name = "sps_size_small"
+  name = format("sps_size_%s", var.size
 }
  module "rendered_size" {
   source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=v1.2-beta.1"
-  property_set = "sps_size_small"
+  property_set = format("sps_size_%s", var.size
   template_properties = merge(var.template_properties, local.rendered_values)
 }
 
@@ -51,8 +51,8 @@ locals  {
   IPv4_Netmask = module.globalproperties.properties.OneFuse_TF_Props.IPv4_Netmask
 
 rendered_values = {
-    cpuCount = data.onefuse_static_property_set.size.properties.cpuCount
-    memoryGB = data.onefuse_static_property_set.size.properties.memoryGB
+    cpuCount = data.onefuse_static_property_set.size.properties.Global_Props.cpuCount
+    memoryGB = data.onefuse_static_property_set.size.properties.Global_Props.memoryGB
     subnet = module.onefuse.subnet
   }
 }
