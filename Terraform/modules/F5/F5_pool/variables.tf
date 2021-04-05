@@ -5,7 +5,3 @@ variable "property_set" {
 variable "name" {
   type = string
 }
-
-variable "virtualserver" {
-  type = string
-}
