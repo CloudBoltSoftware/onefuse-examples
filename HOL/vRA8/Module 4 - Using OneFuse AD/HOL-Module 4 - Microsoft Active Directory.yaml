@@ -1,0 +1,79 @@
+formatVersion: 1
+inputs:
+  oneFuseEndpoint:
+    type: string
+    title: OneFuse Endpoint
+    enum:
+      - onefuse
+resources:
+  Cloud_Machine_1:
+    type: Cloud.Machine
+    metadata:
+      layoutPosition:
+        - 0
+        - 0
+    properties:
+      image: UbuntuServer20
+      flavor: Small
+      #############################
+      #Production Properties
+      # Environment: prod
+      # nameEnvironment: p
+      # dnsZone: prod.lab.local
+      # ouEnvironment: Prod
+      #############################
+      #Properties Development
+      #Environment: dev
+      # nameEnvironment: d
+      # dnsZone: dev.lab.local
+      # ouEnvironment: Dev
+      #############################
+      #Properties - Location
+      #East
+      # Location: east
+      # nameLocation: e
+      #West
+      # Location: west
+      # nameLocation: w
+      #############################
+      #Application Property
+      #Wordpress
+      # nameApplication: wp
+      #IIS
+      # NameApplication: iis
+      #############################
+      #OS Property
+      #Linux
+      # nameOS: l
+      #Windows
+      # nameOS: w
+      #############################
+      #Compliance Property
+      #PCI
+      # nameCompliance: pci
+      #SOX
+      # nameCompliance: sox
+      #############################
+      #Deployment 1 - prod east
+      Environment: prod
+      nameEnvironment: p
+      Location: east
+      nameLocation: e
+      dnsZone: prod.lab.local
+      ouEnvironment: Prod
+      #############################
+      #Deployment 2 - dev west
+      #Environment: dev
+      #nameEnvironment: d
+      #Location: west
+      #dnsZone: dev.lab.local
+      #ouEnvironment: Dev
+      ##############################
+      nameApplication: wp
+      nameOS: l
+      nameCompliance: pci
+      # OneFuse Policies
+      OneFuse_NamingPolicy: '${input.oneFuseEndpoint}:machineNaming'
+      OneFuse_IpamPolicy_Nic0: '${input.oneFuseEndpoint}:prodeast'
+      OneFuse_DnsPolicy_Nic0: '${input.oneFuseEndpoint}:default:{{dnsZone}}'
+      OneFuse_ADPolicy: '${input.oneFuseEndpoint}:default'

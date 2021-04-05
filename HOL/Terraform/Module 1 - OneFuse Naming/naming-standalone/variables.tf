@@ -3,21 +3,24 @@ variable "onefuse_scheme" {
   default = "https"
 }
 
-variable "onefusebp_address" {
+variable "onefuse_address" {
   type = string
-  default = "onefuse12bp.sovlabs.net"
+  default = "onefuse.lab.local"
 }
 
 variable "onefuse_port" {
   type = string
+  default = "443"
 }
 
 variable "onefuse_user" {
   type = string
+  default = "admin"
 }
 
 variable "onefuse_password" {
   type = string
+  default = "Go2atc4labs!"
 }
 
 variable "onefuse_verify_ssl" {
@@ -30,13 +33,32 @@ variable "workspace_url" {
   default = "" // Default
 }
 
+
+//Deployment 1 Variables - Prod East
+/*
 variable "onefuse_template_properties" {
   type = map
   default = {
-      "nameEnvironment"               = "p"
-      "nameOS"         	              = "w"
-      "nameApplication"               = "ap"
-      "nameLocation"                  = "east"
-      "dnsSuffix"                    = "infoblox851.sovlabs.net"
+      "nameEnvironment"               = "p"     //p for production or d for development
+      "nameLocation"                  = "e"     //e for East or w for West
+      "nameApplication"               = "wp"    //wp for wordpress or iis for IIS
+      "nameOS"         	              = "l"     //l for Linux or w for Windows
+      "nameCompliance"                = "pci"   //pci or sox
+      "dnsZone"                       = "prod.lab.local" //dev.lab.local or prod.lab.local
+  }
+}
+*/
+
+//Deployment 2 Variables - Dev West
+
+variable "onefuse_template_properties" {
+  type = map
+  default = {
+//      "nameEnvironment"               = "d"     //p for production or d for development
+      "nameLocation"                  = "w"     //e for East or w for West
+      "nameApplication"               = "wp"    //wp for wordpress or iis for IIS
+      "nameOS"         	              = "l"     //l for Linux or w for Windows
+      "nameCompliance"                = "pci"   //pci or sox
+      "dnsZone"                       = "dev.lab.local" //dev.lab.local or prod.lab.local
   }
 }

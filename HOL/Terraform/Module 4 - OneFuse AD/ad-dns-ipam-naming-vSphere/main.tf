@@ -1,10 +1,10 @@
- // Comment out the following for Terraform 0.12
+// Comment out the following for Terraform 0.12
 
  terraform {
   required_providers {
     onefuse = {
       source  = "CloudBoltSoftware/onefuse"
-      version = ">= 1.10.0"
+      version = ">= 1.20.0"
    }
   }
   required_version = ">= 0.13"
@@ -15,7 +15,7 @@
 provider "onefuse" {
 
   scheme     = var.onefuse_scheme
-  address    = var.onefusebp_address
+  address    = var.onefuse_address
   port       = var.onefuse_port
   user       = var.onefuse_user
   password   = var.onefuse_password
@@ -24,12 +24,12 @@ provider "onefuse" {
 
 // OneFuse Data Source for Naming Policy to lookup policy ID
 data "onefuse_naming_policy" "policy" {
-  name = "default"
+  name = "machineNaming"
 }
 
 // OneFuse Data Source for IPAM Policy to lookup policy ID
 data "onefuse_ipam_policy" "policy" {
-  name = "prodeast"
+  name = var.ipam_policy
 }
 
 // OneFuse Data Source for DNS Policy to lookup policy ID
@@ -79,7 +79,7 @@ resource "onefuse_microsoft_ad_computer_account" "computer" {
 
 // Output Results for Naming
 output "hostname" {
-  value = onefuse_naming.name.name
+  value = onefuse_naming.name.id
 }
 
 // Output Results for IPAM Resources
@@ -97,6 +97,26 @@ output "gateway" {
 
 output "network" {
   value = onefuse_ipam_record.ipam-record.network
+}
+
+output "subnet" {
+  value = onefuse_ipam_record.ipam-record.subnet
+}
+
+output "primary_dns" {
+  value = onefuse_ipam_record.ipam-record.primary_dns
+}
+
+output "secondary_dns" {
+  value = onefuse_ipam_record.ipam-record.secondary_dns
+}
+
+output "dns_suffix" {
+  value = onefuse_ipam_record.ipam-record.dns_suffix
+}
+
+output "vSphere_Folder" {
+  value = vsphere_virtual_machine.vm.folder
 }
 
 output "ad_ou" {
