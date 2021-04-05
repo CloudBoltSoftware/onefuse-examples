@@ -26,18 +26,26 @@ variable "onefuse_verify_ssl" {
   default = false
 }
 
-variable "ipam_policy" {
+variable "name_policy" {
   type = string
 }
 
-variable "naming_policy" {
+variable "environment" {
   type = string
 }
 
-variable "dns_policy" {
+variable "application" {
   type = string
 }
-variable "script_policy" {
+
+variable "group" {
+  type = string
+}
+
+variable "size" {
+  type = string
+}
+variable "location" {
   type = string
 }
 

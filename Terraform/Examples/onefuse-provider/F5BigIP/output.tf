@@ -1,36 +1,59 @@
-// Output Results for OneFuse resources
 output "hostname" {
-  value = onefuse_naming.machine.name
+  value = module.vm.hostname
+}
+
+output "dns_suffix" {
+  value = module.vm.dns_suffix
 }
 
 output "ip_address" {
-  value = onefuse_ipam_record.ipam-record.ip_address
+  value = module.vm.ip_address
 }
 
 output "netmask" {
-  value = onefuse_ipam_record.ipam-record.netmask
+  value = module.vm.netmask
 }
 
 output "gateway" {
-  value = onefuse_ipam_record.ipam-record.gateway
+  value = module.vm.gateway
 }
 
 output "network" {
-  value = onefuse_ipam_record.ipam-record.network
+  value = module.vm.network
 }
 
 output "subnet" {
-  value = onefuse_ipam_record.ipam-record.subnet
+  value = module.vm.subnet
 }
 
 output "primary_dns" {
-  value = onefuse_ipam_record.ipam-record.primary_dns
+  value = module.vm.primary_dns
 }
 
 output "secondary_dns" {
-  value = onefuse_ipam_record.ipam-record.secondary_dns
+  value = module.vm.secondary_dns
 }
 
-output "machine_fqdn" {
-  value = onefuse_naming.machine.id
+output "fqdn" {
+  value = format("%s.%s", module.vm.hostname, module.vm.dns_suffix)
+}
+
+output "ad_ou" {
+  value = module.vm.ad_ou
+}
+
+output "cpu" {
+  value = module.vm.cpu
+}
+
+output "mem" {
+  value = module.vm.mem
+}
+
+output "vSphere_folder" {
+  value = module.vm.vSphere_folder
+}
+
+output "IPv4_Netmask" {
+  value = module.vm.IPv4_Netmask
 }
