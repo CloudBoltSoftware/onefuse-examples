@@ -1,19 +1,7 @@
-resource "bigip_ltm_virtual_server" "vip" {
-  name        = local.pool
-  destination = onefuse_ipam_record.f5_ipam.ip_address
-  port        = local.vip_port
-  pool        = local.pool
-  ip_protocol = local.vip_ip_protocol
-  source_address_translation = local.vip_source_address_translation
-  depends_on = [bigip_ltm_pool.pool]
-}
-
-resource "bigip_ltm_pool" "pool" {
-    name = local.virtualserver
-    monitors = [local.monitors]
-    allow_nat = local.allow_nat
-    allow_snat = local.allow_snat
-    load_balancing_mode = local.load_balancing_mode
+module "f5vip" {
+    source = "git::https://https://github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/F5/F5_main"
+    f5sps = var.policy
+    template_properties = var.template_properties
 }
 
 resource "bigip_ltm_node" "node" {
@@ -29,7 +17,7 @@ resource "bigip_ltm_node" "node" {
 }
 
 resource "bigip_ltm_pool_attachment" "attach_node" {
-  pool = bigip_ltm_pool.pool.name
+  pool = module.f5vip.pool_name
   node = format("%s:%s", bigip_ltm_node.node.name, local.node_port)
   ratio = local.node_ratio
 }

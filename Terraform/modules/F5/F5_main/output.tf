@@ -1,9 +1,9 @@
 output "vip_name" {
-  value = onefuse_naming.f5.name
+  value = local.virtualserver
 }
 
 output "pool_name" {
-  value = onefuse_naming.f5.name
+  value = local.pool
 }
 
 output "vip_ip_address" {

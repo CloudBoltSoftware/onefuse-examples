@@ -25,9 +25,6 @@ variable "onefuse_verify_ssl" {
   type = bool
   default = false
 }
-variable "template_properties" {
-  type = map
-}
 
 variable "ipam_policy" {
   type = string
@@ -69,5 +66,13 @@ variable "f5_username" {
 }
 
 variable "f5_password" {
+  type = string
+}
+
+variable "template_properties" {
+  type = map
+}
+
+variable "f5sps" {
   type = string
 }
