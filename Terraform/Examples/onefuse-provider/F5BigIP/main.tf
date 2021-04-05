@@ -29,6 +29,15 @@ provider "onefuse" {
   verify_ssl = var.onefuse_verify_ssl
 }
 
+provider "vsphere" {
+  user           = var.vsphere_user
+  password       = var.vsphere_password
+  vsphere_server = var.vsphere_server
+
+  # If you have a self-signed cert
+  allow_unverified_ssl = true
+}
+
 data "onefuse_static_property_set" "property_set" {
   name = "sps_f5_sid"
 }

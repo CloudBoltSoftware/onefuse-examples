@@ -1,5 +1,5 @@
 data "onefuse_static_property_set" "f5_properties" {
-  name = var.f5sps
+  name = local.f5_properties
 }
 
 locals  {
