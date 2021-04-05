@@ -51,8 +51,8 @@ locals  {
   IPv4_Netmask = module.globalproperties.properties.OneFuse_TF_Props.IPv4_Netmask
 
 rendered_values = {
-    cpuCount = data.onefuse_static_property_set.size.properties.Global_Props.cpuCount
-    memoryGB = data.onefuse_static_property_set.size.properties.Global_Props.memoryGB
+    cpuCount = jsondecode(data.onefuse_static_property_set.size.raw).Global_Props.cpuCount
+    memoryGB = jsondecode(data.onefuse_static_property_set.size.raw).Global_Props.memoryGB
     subnet = module.onefuse.subnet
   }
 }
