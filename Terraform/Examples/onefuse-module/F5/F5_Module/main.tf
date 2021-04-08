@@ -1,22 +1,22 @@
 module "f5_name" {
     source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//naming?ref=v1.2-beta.1"
-    policy = format("sps_f5_%s", local.f5_name_policy)
+    policy = local.f5_name_policy
     template_properties = var.template_properties
 }
 
 module "f5_ipam" {
     source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ipam?ref=v1.2-beta.1"
-    policy = format("sps_f5_%s", local.f5_ipam_policy)
+    policy = local.f5_ipam_policy
     hostname = module.f5_name.hostname
     template_properties = var.template_properties
 }
 
 module "f5_dns" {
     source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//dns?ref=v1.2-beta.1"
-    policy = format("sps_f5_%s", local.f5_dns_policy)
+    policy = local.f5_dns_policy
     hostname = module.f5_name.hostname
-    ip_address = odule.f5_ipam.ip_address
-    dns_zones = var.dns_zones
+    ip_address = module.f5_ipam.ip_address
+    dns_zones = var.template_properties.dnsSuffix
     template_properties = var.template_properties
 }
 
@@ -31,7 +31,6 @@ module "f5_vip" {
 module "f5_pool" {
     source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/F5/F5_pool"
     name = module.f5_name.hostname
-    virtual_server = module.f5_name.hostname
     property_set = var.property_set
 }
 
