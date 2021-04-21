@@ -8,3 +8,6 @@ output "pool" {
   value = bigip_ltm_pool.pool
 }
 
+output "pool_name" {
+  value = local.pool
+}
