@@ -1,13 +1,10 @@
 //F5 Outputs
 
-output "vip_name" {
-  value = local.virtualserver
+output "vip" {
+  value = bigip_ltm_virtual_server.vip
 }
 
-output "pool_name" {
-  value = local.pool
+output "pool" {
+  value = bigip_ltm_pool.pool
 }
 
-output "vip_ip_address" {
-  value = onefuse_ipam_record.f5_ipam.ip_address
-}

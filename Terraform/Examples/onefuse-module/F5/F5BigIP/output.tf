@@ -1,4 +1,4 @@
-output "hostname" {
+output "VM" {
   value = module.vm
 }
 

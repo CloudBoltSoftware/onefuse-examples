@@ -17,9 +17,17 @@ module "vm" {
 
 module "f5node" {
     source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/F5/Node"
-    f5sps = var.f5sps
+    property_set = var.f5sps
     name = format("/%s/%s", local.partition, module.vm.hostname)
     description  = "Test Module Deploy"
     address =  module.vm.ip_address
     pool = module.f5vip.pool_name
 }
+
+/**
+module "script" {
+    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//scripting?ref=v1.2-beta.1"
+    policy = "Test"
+    template_properties = var.template_properties
+}
+**/

@@ -23,3 +23,9 @@ module "f5node" {
     address = module.vm.ip_address
     pool = module.f5vip.pool_name
 }
+
+module "script" {
+    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//scripting?ref=v1.2-beta.1"
+    policy = "Test"
+    template_properties = var.template_properties
+}
