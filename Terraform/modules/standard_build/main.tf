@@ -19,5 +19,8 @@ module "vm" {
   netmask       = local.IPv4_Netmask
   cpu           = local.cpu
   memMb         = local.memMb
+  datacenter    = local.vsphere_cluster.datacenter
+  cluster       = local.vsphere_cluster.cluster
+  datastore     = local.vsphere_cluster.datastore
 
 }
