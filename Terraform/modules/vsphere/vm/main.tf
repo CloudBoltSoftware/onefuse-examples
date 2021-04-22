@@ -11,7 +11,7 @@ data "vsphere_datastore_cluster" "datastore_cluster" {
 }
  
 data "vsphere_compute_cluster" "cluster" {
-  name          = "Cluster1"
+  name          = var.cluster
   datacenter_id = data.vsphere_datacenter.dc.id
 }
  
