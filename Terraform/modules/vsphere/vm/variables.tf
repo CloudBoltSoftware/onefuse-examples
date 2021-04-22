@@ -37,10 +37,6 @@ variable "netmask" {
   type = string
 }
 
-variable "datacenter" {
-  type = string
-}
-
 variable "cluster" {
   type = string
 }
