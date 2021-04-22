@@ -2,16 +2,16 @@
 
 #Data Sources
 data "vsphere_datacenter" "dc" {
-  name = "SovLabs"
+  name = var.datacenter
 }
 
 data "vsphere_datastore_cluster" "datastore_cluster" {
-  name          = "SovLabs_XtremIO"
+  name          = var.datastore
   datacenter_id = data.vsphere_datacenter.dc.id
 }
  
 data "vsphere_compute_cluster" "cluster" {
-  name          = "Cluster1"
+  name          = var.cluster
   datacenter_id = data.vsphere_datacenter.dc.id
 }
  

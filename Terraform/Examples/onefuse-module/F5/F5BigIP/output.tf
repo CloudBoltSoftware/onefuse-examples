@@ -3,7 +3,7 @@ output "VM" {
 }
 
 output "f5_vip_pool" {
-  value = module.f5vip
+  value = module.f5
 }
 
 output "f5_node" {

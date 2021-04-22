@@ -36,3 +36,15 @@ variable "memMb" {
 variable "netmask" {
   type = string
 }
+
+variable "datacetner {
+  type = string
+}
+
+variable "cluster" {
+  type = string
+}
+
+variable "datastore" {
+  type = string
+}

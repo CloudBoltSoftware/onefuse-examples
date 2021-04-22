@@ -1,3 +1,9 @@
+module "deployment_count" {
+    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//naming?ref=v1.2-beta.1"
+    policy = "deployment_count"
+    template_properties = var.template_properties
+}
+
 module "environment" {
   source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=v1.2-beta.1"
   property_set = format("sps_env_%s", var.environment)
@@ -43,6 +49,10 @@ data "onefuse_static_property_set" "size" {
   template_properties = merge(var.template_properties, local.rendered_values)
 }
 
+data "onefuse_static_property_set" "vsphere_cluster" {
+    name = module.globalproperties.properties.OneFuse_TF_Props.vsphere_cluster
+}
+
 locals  {
   cpu = module.rendered_size.properties.OneFuse_TF_Props.cpu
   memMb = module.rendered_size.properties.OneFuse_TF_Props.memMb
@@ -54,5 +64,13 @@ rendered_values = {
     cpuCount = jsondecode(data.onefuse_static_property_set.size.raw).Global_Props.cpuCount
     memoryGB = jsondecode(data.onefuse_static_property_set.size.raw).Global_Props.memoryGB
     subnet = module.onefuse.subnet
+    deployment_count = module.deployment_count.name
   }
+
+vSphere_cluster = {
+    datacetner = jsondecode(data.onefuse_static_property_set.vsphere_cluster.raw).datacetner
+    cluster = jsondecode(data.onefuse_static_property_set.vsphere_cluster.raw).cluster
+    datastore = jsondecode(data.onefuse_static_property_set.vsphere_cluster.raw).datastore
+  }
+
 }

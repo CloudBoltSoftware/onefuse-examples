@@ -5,4 +5,5 @@ data "onefuse_static_property_set" "property_set" {
 locals  {
 partition = jsondecode(data.onefuse_static_property_set.property_set.raw).f5_general.partition
 f5_properties = format("sps_f5_%s", var.f5sps)
+
 }
