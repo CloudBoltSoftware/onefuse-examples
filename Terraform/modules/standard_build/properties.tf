@@ -68,7 +68,6 @@ rendered_values = {
   }
 
 vsphere_cluster = {
-    datacenter = jsondecode(data.onefuse_static_property_set.vsphere_cluster.raw).datacetner
     cluster = jsondecode(data.onefuse_static_property_set.vsphere_cluster.raw).cluster
     datastore = jsondecode(data.onefuse_static_property_set.vsphere_cluster.raw).datastore
   }
