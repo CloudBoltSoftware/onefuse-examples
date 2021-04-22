@@ -67,7 +67,7 @@ rendered_values = {
     deployment_count = module.deployment_count.name
   }
 
-vSphere_cluster = {
+vsphere_cluster = {
     datacetner = jsondecode(data.onefuse_static_property_set.vsphere_cluster.raw).datacetner
     cluster = jsondecode(data.onefuse_static_property_set.vsphere_cluster.raw).cluster
     datastore = jsondecode(data.onefuse_static_property_set.vsphere_cluster.raw).datastore
