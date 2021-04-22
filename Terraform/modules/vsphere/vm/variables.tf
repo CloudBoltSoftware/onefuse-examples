@@ -37,7 +37,7 @@ variable "netmask" {
   type = string
 }
 
-variable "datacetner" {
+variable "datacenter" {
   type = string
 }
 
