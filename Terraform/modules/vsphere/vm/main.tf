@@ -2,7 +2,7 @@
 
 #Data Sources
 data "vsphere_datacenter" "dc" {
-  name = var.datacenter
+  name = "SovLabs"
 }
 
 data "vsphere_datastore_cluster" "datastore_cluster" {
