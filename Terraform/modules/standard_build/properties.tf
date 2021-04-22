@@ -64,7 +64,7 @@ rendered_values = {
     cpuCount = jsondecode(data.onefuse_static_property_set.size.raw).Global_Props.cpuCount
     memoryGB = jsondecode(data.onefuse_static_property_set.size.raw).Global_Props.memoryGB
     subnet = module.onefuse.subnet
-    deployment_count = module.deployment_count.name
+    deployment_count = module.deployment_count.hostname
   }
 
 vsphere_cluster = {
