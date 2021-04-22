@@ -37,7 +37,7 @@ variable "netmask" {
   type = string
 }
 
-variable "datacetner {
+variable "datacetner" {
   type = string
 }
 
