@@ -6,7 +6,7 @@ data "vsphere_datacenter" "dc" {
 }
 
 data "vsphere_datastore_cluster" "datastore_cluster" {
-  name          = "SovLabs_XtremIO"
+  name          = var.datastore
   datacenter_id = data.vsphere_datacenter.dc.id
 }
  
