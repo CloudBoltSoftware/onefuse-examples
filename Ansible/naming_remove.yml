@@ -1,0 +1,10 @@
+- name: Naming Test
+  hosts: localhost
+  tasks:
+  - name: Remove Name
+    OneFuse_release_name:
+      name_id: '312'
+    register: testout
+  - name: dump test output
+    debug:
+      msg: '{{ testout }}'

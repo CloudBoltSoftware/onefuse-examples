@@ -1,0 +1,14 @@
+- name: Naming Test
+  hosts: localhost
+  tasks:
+  - name: Include Template Properties
+      include_vars: template_properties.yml
+  - name: Get a Name
+    OneFuse_get_name_facts:
+      policy_name: 'machine'
+      template_properties: '{{ payload }}'
+    register: name
+  - name: Output Results
+    debug:
+      msg: '{{ name }}'
+

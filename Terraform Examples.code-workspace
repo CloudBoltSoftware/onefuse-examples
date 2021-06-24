@@ -10,13 +10,25 @@
 			"path": "..\\..\\scratch"
 		},
 		{
-			"path": "..\\terraform-provider-onefuse"
-		},
-		{
 			"path": "..\\terraform-demo"
 		},
 		{
 			"path": "..\\WWT-HOL-internal"
+		},
+		{
+			"path": "..\\onefuse-cloudbolt-plugin"
+		},
+		{
+			"path": "..\\onefuse-ansible-module"
+		},
+		{
+			"path": "..\\ansible"
+		},
+		{
+			"path": "\\\\wsl$\\Ubuntu\\home\\ssmith\\.ansible"
+		},
+		{
+			"path": "..\\..\\test\\terraform-provider-onefuse"
 		}
 	],
 	"settings": {}

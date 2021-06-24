@@ -1,0 +1,19 @@
+- name: IPAM Test
+  hosts: localhost
+  tasks:
+  - name: Get iP Address
+    OneFuse_get_ip_address:
+      policy_name: 'atlprod'
+      template_properties: {
+                nameGroup: 'pp',
+                hostname: 'sidtest1234',
+                nameLocation: 'atl',
+                nameEnv: 'p',
+                nameOS: 'l',
+                nameApp: 'wp',
+                dnsSuffix: 'infoblox851.sovlabs.net'
+        }
+    register: ipaddress
+  - name: Output Results
+    debug:
+      msg: '{{ ipaddress }}'

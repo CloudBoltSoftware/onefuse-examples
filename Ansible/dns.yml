@@ -1,0 +1,21 @@
+- name: DNS Create
+  hosts: localhost
+  tasks:
+  - name: Create DNS Record
+    OneFuse_create_dns:
+     policy_name: 'prod'
+     ip_address: '2.2.2.2'
+     zone: 'infoblox851.sovlabs.net'
+     template_properties: {
+       nameGroup: 'pp',
+       hostname: 'sidtest123',
+       nameLocation: 'atl',
+       nameEnv: 'p',
+       nameOS: 'l',
+       nameApp: 'wp',
+       dnsSuffix: 'infoblox851.sovlabs.net'
+        }
+    register: id
+  - name: Output Results
+    debug:
+      msg: '{{ id }}'

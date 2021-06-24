@@ -1,0 +1,21 @@
+- name: CMDB Create
+  hosts: localhost
+  tasks:
+  - name: Create CMDB Record
+    OneFuse_create_cmdb:
+     policy_name: 'linux'
+     template_properties: {
+      OneFuse_VmNic0.dnsSuffix: 'infoblox851.sovlabs.net',
+      OneFuse_VmNic0.hostname: 'sitest555',
+      OneFuse_VmNic0.fqdn: 'sidtest555.infoblox851.sovlabs.net',
+      OneFuse_VmNic0.ipAddress: '2.2.2.2',
+      OneFuse_VmHardware.platformUuid: '42258454-8794-7a93-0ae6-ffe5a27f709a',
+      OneFuse_VmHardware.cpuCount: '2',
+      OneFuse_VmHardware.totalStorageGB: '16',
+      OneFuse_VmHardware.memoryMB: '1024',
+      OneFuse_VmHardware.powerState: 'on'
+        }
+    register: id
+  - name: Output Results
+    debug:
+      msg: '{{ id }}'

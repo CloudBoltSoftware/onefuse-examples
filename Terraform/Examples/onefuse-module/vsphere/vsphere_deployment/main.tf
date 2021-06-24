@@ -7,8 +7,9 @@ module "web" {
   group                    = var.group
   size                     = var.size
   location                 = var.location
-
 }
+
+
 module "db" {
   source = "github.com/CloudBoltSoftware/onefuse-examples.git/Terraform/modules/standard_build"
   template_properties      = var.template_properties

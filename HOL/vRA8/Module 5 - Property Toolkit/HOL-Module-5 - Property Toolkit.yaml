@@ -1,0 +1,56 @@
+formatVersion: 1
+inputs:
+  oneFuseEndpoint:
+    type: string
+    title: OneFuse Endpoint
+    enum:
+      - onefuse
+  machine:
+    type: object
+    title: Machine Properties
+    $ref: /ref/property-groups/OneFusePropertyToolkitInputs
+resources:
+  Cloud_Machine_1:
+    type: Cloud.Machine
+    metadata:
+      layoutPosition:
+        - 0
+        - 0
+    properties:
+      image: UbuntuServer20
+      flavor: Small
+      #############################
+      #Deployment 1 - Drive Property Toolkit using Inputs
+      #############################
+      # Property Toolkit - Trigger Property
+      OneFuse_PropertyToolkit: '${input.oneFuseEndpoint}:true'
+      # Property Toolkit - Environment
+      OneFuse_SPS_env: 'sps_env_${input.machine.Environment}'
+      # Property Toolkit - Location
+      OneFuse_SPS_loc: 'sps_loc_${input.machine.Location}'
+      # Property Toolkit - Application
+      OneFuse_SPS_app: 'sps_app_${input.machine.Application}'
+      # Property Toolkit - OS
+      OneFuse_SPS_os: 'sps_os_${input.machine.OS}'
+      # Property Toolkit - Compliance
+      OneFuse_SPS_comp: 'sps_comp_${input.machine.Compliance}'
+      #############################
+      #Deployment 2 - Create Properties
+      #############################
+      #OneFuse_CreateProperties_Backup: '{"key":"{% if \"${input.machine.Compliance}\" == \"sox\" %}BackupPolicy{% endif %}","value":"Gold"}'
+      #############################
+      #Deployment 3 - Create Tags
+      #############################
+      #OneFuse_CreateTags_001Application: '{"key": "Application", "value": "${input.machine.Application}"}'
+      #OneFuse_CreateTags_002Environment: '{"key": "Environment", "value": "${input.machine.Environment}"}'
+      #OneFuse_CreateTags_003Location: '{"key": "Location", "value": "${input.machine.Location}"}'
+      #OneFuse_CreateTags_004Compliance: '{"key": "Compliance", "value": "${input.machine.Compliance}"}'
+      #OneFuse_CreateTags_005Size: '{"key": "Size", "value": "${input.machine.Size}"}'
+      #OneFuse_CreateTags_006vCenterfolder: '{"key": "vCenterFolder", "value": "{{ vCenterFolder }}"}'
+      #############################
+      # OneFuse Policies
+      #############################
+      OneFuse_NamingPolicy: '${input.oneFuseEndpoint}:machineNaming'
+      OneFuse_IpamPolicy_Nic0: '${input.oneFuseEndpoint}:${input.machine.Environment}${input.machine.Location}'
+      OneFuse_DnsPolicy_Nic0: '${input.oneFuseEndpoint}:default:{{dnsZone}}'
+      OneFuse_ADPolicy: '${input.oneFuseEndpoint}:default'

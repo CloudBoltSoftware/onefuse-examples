@@ -1,0 +1,118 @@
+# Get OneFuse Name
+
+- name: Machine Name
+  hosts: localhost
+  tasks:
+  - name: Get Machine Name
+    OneFuse_get_name_facts:
+      policy_name: 'machine'
+      template_properties: {
+                nameGroup: 'pp',
+                nameLocation: 'atl',
+                nameEnv: 'p',
+                nameOS: 'l',
+                nameApp: 'wp'
+        }
+    register: name
+  - name: Output Results
+    debug:
+      msg: '{{ name }}'
+
+# Get OneFuse IP Address
+
+- name: IPAM Test
+  hosts: localhost
+  tasks:
+  - name: Get iP Address
+    OneFuse_get_ip_address:
+      policy_name: 'atlprod'
+      tracking_id: '{{ tracking_id }}'
+      template_properties: {
+                nameGroup: 'pp',
+                hostname: '{{ onefuse_name }}',
+                nameLocation: 'atl',
+                nameEnv: 'p',
+                nameOS: 'l',
+                nameApp: 'wp',
+                dnsSuffix: 'infoblox851.sovlabs.net'
+        }
+    register: ipaddress
+  - name: Output Results
+    debug:
+      msg: '{{ ipaddress }}'
+
+# Create OneFuse DNS Record
+
+- name: DNS Create
+  hosts: localhost
+  tasks:
+  - name: Create DNS Record
+    OneFuse_create_dns:
+     policy_name: 'prod'
+     ip_address: '{{ ip_address }}'
+     zone: '{{ zone }}'
+     tracking_id: '{{ tracking_id }}'
+     template_properties: {
+       nameGroup: 'pp',
+       hostname: '{{ onefuse_name }}',
+       nameLocation: 'atl',
+       nameEnv: 'p',
+       nameOS: 'l',
+       nameApp: 'wp',
+       dnsSuffix: '{{ zone }}'
+        }
+    register: id
+  - name: Output Results
+    debug:
+      msg: '{{ id }}'
+
+# Create AD Computer Object
+
+- name: AD Create
+  hosts: localhost
+  tasks:
+  - name: Create AD Record
+    OneFuse_create_ad:
+     policy_name: 'prod'
+     tracking_id: '{{ tracking_id }}'
+     template_properties: {
+       nameGroup: 'pp',
+       hostname: '{{ onefuse_name }}',
+       nameLocation: 'atl',
+       nameEnv: 'p',
+       nameOS: 'l',
+       nameApp: 'wp',
+       dnsSuffix: '{{ zone }}',
+       ouGroup: "PiedPiper",
+       ouEnv: "PRD",
+       sgEnv: "prod"
+        }
+    register: id
+  - name: Output Results
+    debug:
+      msg: '{{ id }}'
+
+# Update CMDB Records
+
+- name: CMDB Create
+  hosts: localhost
+  tasks:
+  - name: Create CMDB Record
+    OneFuse_create_cmdb:
+     policy_name: 'linux'
+     tracking_id: '{{ tracking_id }}'
+     template_properties: {
+      OneFuse_VmNic0.dnsSuffix: '{{ zone }}',
+      OneFuse_VmNic0.hostname: '{{ onefuse_name }}',
+      OneFuse_VmNic0.fqdn: '{{ onefuse_name }}',
+      OneFuse_VmNic0.ipAddress: '{{ ip_address }}',
+      OneFuse_VmHardware.platformUuid: '42258454-8794-7a93-0ae6-ffe5a27f709a',
+      OneFuse_VmHardware.cpuCount: '2',
+      OneFuse_VmHardware.totalStorageGB: '16',
+      OneFuse_VmHardware.memoryMB: '1024',
+      OneFuse_VmHardware.powerState: 'on'
+     }
+    register: id
+  - name: Output Results
+    debug:
+      msg: '{{ id }}'

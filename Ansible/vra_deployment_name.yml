@@ -1,0 +1,38 @@
+# Get OneFuse Deployment Name
+
+- name: Deployment Name
+  hosts: localhost
+  tasks:
+  - name: Get deployment Name
+    OneFuse_get_name_facts:
+      policy_name: 'deployment'
+      template_properties: {
+                deployNameRequestSource: 'Ansible',
+                deployNameApp: 'Linux',
+                deployNameEnv: 'Test'
+        }
+    register: name
+  - name: Output Results
+    debug:
+      msg: '{{ name }}'
+
+# Deploy vRA Blueprint
+
+- name: Deploy vRA
+  hosts: localhost
+  tasks:
+  - name: Deploy vRA Blueorint
+    OneFuse_deploy_vra:
+     policy_name: 'ansible_test'
+     deployment_name: '{{ onefuse_name }}'
+     template_properties: {
+       env: 'test',
+       app: 'linux',
+       size: 'small',
+       location: 'atl',
+       deploymentOwner: 'mbombard'
+        }
+    register: id
+  - name: Output Results
+    debug:
+      msg: '{{ id }}'

@@ -1,0 +1,37 @@
+{
+    "f5_general": {
+      "partition": "Common"
+    },
+    "f5_vip": {
+      "name": "",
+      "description": "",
+      "destination": "",
+      "port": "443",
+      "pool": "",
+      "ip_protocol": "tcp",
+      "source_address_translation": "automap",
+      "name_policy": "F5BigIP",
+      "ipam_policy": "F5_VIP",
+      "dns_policy": "prod"
+    },
+    "f5_pool": {
+      "name": "",
+      "description": "",
+      "monitors": "tcp",
+      "allow_nat": "yes",
+      "allow_snat": "yes",
+      "load_balancing_mode": "round-robin",
+      "name_policy": "F5BigIP",
+      "name_after_vip": "yes"
+    },
+    "f5_node": {
+      "name": "",
+      "description": "",
+      "address": "",
+      "connection_limit": "0",
+      "rate_limit": "disabled",
+      "port": "443",
+      "address_family": "ipv4",
+      "ratio": "1"
+    }
+  }

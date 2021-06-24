@@ -1,0 +1,10 @@
+- name: AD Remove
+  hosts: localhost
+  tasks:
+  - name: Remove AD
+    OneFuse_release_ad:
+      id: '94'
+    register: testout
+  - name: dump test output
+    debug:
+      msg: '{{ testout }}'

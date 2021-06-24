@@ -1,0 +1,10 @@
+- name: IPAM Remove
+  hosts: localhost
+  tasks:
+  - name: Remove IPAM
+    OneFuse_release_ipam:
+      ipam_id: '124'
+    register: testout
+  - name: dump test output
+    debug:
+      msg: '{{ testout }}'

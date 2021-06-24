@@ -1,0 +1,22 @@
+- name: AD Create
+  hosts: localhost
+  tasks:
+  - name: Create AD Record
+    OneFuse_create_ad:
+     policy_name: 'prod'
+     template_properties: {
+       nameGroup: 'pp',
+       hostname: 'sidtest123',
+       nameLocation: 'atl',
+       nameEnv: 'p',
+       nameOS: 'l',
+       nameApp: 'wp',
+       dnsSuffix: 'infoblox851.sovlabs.net',
+       ouGroup: "PiedPiper",
+       ouEnv: "PRD",
+       sgEnv: "prod"
+        }
+    register: id
+  - name: Output Results
+    debug:
+      msg: '{{ id }}'

@@ -1,0 +1,10 @@
+- name: DNS Remove
+  hosts: localhost
+  tasks:
+  - name: Remove DNS
+    OneFuse_release_dns:
+      id: '99'
+    register: testout
+  - name: dump test output
+    debug:
+      msg: '{{ testout }}'

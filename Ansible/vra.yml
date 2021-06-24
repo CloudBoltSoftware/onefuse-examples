@@ -1,0 +1,18 @@
+- name: Deploy vRA
+  hosts: localhost
+  tasks:
+  - name: Deploy vRA Blueorint
+    OneFuse_deploy_vra:
+     policy_name: 'ansible_test'
+     deployment_name: 'sid Ansible test deployment'
+     template_properties: {
+       env: 'test',
+       app: 'linux',
+       size: 'small',
+       location: 'atl',
+       deploymentOwner: 'mbombard'
+        }
+    register: id
+  - name: Output Results
+    debug:
+      msg: '{{ id }}'

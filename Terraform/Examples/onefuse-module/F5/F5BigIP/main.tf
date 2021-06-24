@@ -24,10 +24,9 @@ module "f5node" {
     description  = "Test Module Deploy"
     address =  each.value.ip_address
     pool = module.f5.pool.name
-      depends_on     = [
-    module.f5, module.vm,
-  ]
 }
+
+
 
 /**
 module "script" {

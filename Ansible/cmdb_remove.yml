@@ -1,0 +1,10 @@
+- name: CMDB Remove
+  hosts: localhost
+  tasks:
+  - name: Remove CMDB
+    OneFuse_release_cmdb:
+      id: '77'
+    register: testout
+  - name: dump test output
+    debug:
+      msg: '{{ testout }}'
