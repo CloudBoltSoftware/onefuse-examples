@@ -34,6 +34,10 @@ variable "hostname" {
   default = "" // Default
 }
 
+variable "dns_suffix" {
+  type = string
+  default = "" // Default
+}
 variable "template_properties" {
   type = map
   default = {

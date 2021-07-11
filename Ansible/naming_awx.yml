@@ -1,5 +1,9 @@
 - name: Machine Name
   hosts: localhost
+  vars:
+    ansible_connection: network_cli
+  become: yes
+  become_method: enable
   tasks:
   - name: Get Machine Name
     OneFuse_get_name:

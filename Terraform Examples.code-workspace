@@ -28,7 +28,10 @@
 			"path": "\\\\wsl$\\Ubuntu\\home\\ssmith\\.ansible"
 		},
 		{
-			"path": "..\\..\\test\\terraform-provider-onefuse"
+			"path": "..\\sid"
+		},
+		{
+			"path": "..\\terraform-provider-onefuse"
 		}
 	],
 	"settings": {}

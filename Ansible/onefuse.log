@@ -1665,3 +1665,108 @@ DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.s
 DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1641/ HTTP/1.1" 200 4406
 DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:OneFuse Job Successful
 DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:mo_json: {'_links': {'self': {'href': '/api/v3/onefuse/servicenowCMDBDeployments/88/', 'title': 'Service Now Cmdb Deployment id 88'}, 'workspace': {'href': '/api/v3/onefuse/workspaces/2/', 'title': 'Default'}, 'policy': {'href': '/api/v3/onefuse/servicenowCMDBPolicies/1/', 'title': 'linux'}, 'jobMetadata': {'href': '/api/v3/onefuse/jobMetadata/1641/', 'title': 'Job Metadata Record id 1641'}}, 'id': 88, 'configurationItemsInfo': [{'ciClassName': 'cmdb_ci_linux_server', 'ciName': 'pp-atlplwp021'}], 'executionDetails': {'latestExecution': {'lifecycle': 'provision', 'timestamp': '2021-06-24T17:40:56.968351Z'}, 'response': {'result': {'items': [{'className': 'cmdb_ci_linux_server', 'operation': 'UPDATE', 'sysId': '13ae0c981b6c341049cccae5624bcb78', 'identifierEntrySysId': '567d0e03dba7ec10050e88d40596194d', 'identificationAttempts': [{'info': 'sys_object_source SKIPPED', 'identifierName': '', 'attemptResult': 'SKIPPED', 'attributes': [], 'hybridEntryCiAttributes': []}, {'identifierName': 'Linux Server rule', 'attemptResult': 'MATCHED', 'attributes': ['serial_number'], 'searchOnTable': 'cmdb_ci_linux_server', 'hybridEntryCiAttributes': []}], 'warningCount': 0, 'markers': [], 'inputIndices': [0], 'errorCount': 0, 'mergedPayloadIds': []}], 'additionalCommittedItems': [], 'relations': [], 'additionalCommittedRelations': []}}}, 'archived': False, 'trackingId': '967664a6-5eb4-4613-aba4-697daf97cb70'}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/namingPolicies/?filter=name.iexact:%22machine%22 HTTP/1.1" 200 949
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Submitting post request to path: /customNames/ with  properties_stack: {'policy': '/api/v3/onefuse/namingPolicies/8/', 'templateProperties': {'nameGroup': 'pp', 'nameLocation': 'atl', 'nameEnv': 'p', 'nameOS': 'l', 'nameApp': 'wp'}, 'workspace': '/api/v3/onefuse/workspaces/2/'}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "POST /api/v3/onefuse/customNames/ HTTP/1.1" 202 764
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:OneFuse Post Response status: 202
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:max_sleep_seconds: 600
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1642/ HTTP/1.1" 200 1676
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Waiting for job completion. Sleeping for 5 seconds. Job state: In_Progress
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1642/ HTTP/1.1" 200 2450
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:OneFuse Job Successful
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:mo_json: {'_links': {'self': {'href': '/api/v3/onefuse/customNames/349/', 'title': 'pp-atlplwp022'}, 'workspace': {'href': '/api/v3/onefuse/workspaces/2/', 'title': 'Default'}, 'policy': {'href': '/api/v3/onefuse/namingPolicies/8/', 'title': 'machine'}, 'jobMetadata': {'href': '/api/v3/onefuse/jobMetadata/1642/', 'title': 'Job Metadata Record id 1642'}}, 'name': 'pp-atlplwp022', 'id': 349, 'dnsSuffix': 'sovlabs.net', 'trackingId': 'f7ba52f3-8f1e-4221-8bfa-318369bc9da2'}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/ipamPolicies/?filter=name.iexact:%22atlprod%22 HTTP/1.1" 200 956
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Submitting post request to path: /ipamReservations/ with  properties_stack: {'policy': '/api/v3/onefuse/ipamPolicies/4/', 'templateProperties': {'nameGroup': 'pp', 'hostname': 'pp-atlplwp022', 'nameLocation': 'atl', 'nameEnv': 'p', 'nameOS': 'l', 'nameApp': 'wp', 'dnsSuffix': 'infoblox851.sovlabs.net'}, 'workspace': '/api/v3/onefuse/workspaces/2/', 'hostname': 'pp-atlplwp022'}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "POST /api/v3/onefuse/ipamReservations/ HTTP/1.1" 202 760
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:OneFuse Post Response status: 202
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:max_sleep_seconds: 600
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1643/ HTTP/1.1" 200 1852
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Waiting for job completion. Sleeping for 5 seconds. Job state: Initialized
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1643/ HTTP/1.1" 200 1855
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Waiting for job completion. Sleeping for 5 seconds. Job state: In_Progress
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1643/ HTTP/1.1" 200 3018
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:OneFuse Job Successful
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:mo_json: {'_links': {'self': {'href': '/api/v3/onefuse/ipamReservations/148/', 'title': '10.30.29.13'}, 'workspace': {'href': '/api/v3/onefuse/workspaces/2/', 'title': 'Default'}, 'policy': {'href': '/api/v3/onefuse/ipamPolicies/4/', 'title': 'atlprod'}, 'jobMetadata': {'href': '/api/v3/onefuse/jobMetadata/1643/', 'title': 'Job Metadata Record id 1643'}}, 'id': 148, 'ipAddress': '10.30.29.13', 'hostname': 'pp-atlplwp022.infoblox851.sovlabs.net', 'ingestEvent': None, 'primaryDns': '10.30.0.11', 'secondaryDns': '10.30.0.12', 'dnsSuffix': 'infoblox851.sovlabs.net', 'dnsSearchSuffixes': 'infoblox851.sovlabs.net,sovlabs.net', 'nicLabel': None, 'subnet': '10.30.29.0/24', 'gateway': '10.30.29.1', 'network': 'dvs_SovLabs_329_10.30.29.0_24', 'netmask': '255.255.255.0', 'trackingId': 'f7ba52f3-8f1e-4221-8bfa-318369bc9da2'}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/dnsPolicies/?filter=name.iexact:%22prod%22 HTTP/1.1" 200 784
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Submitting post request to path: /dnsReservations/ with  properties_stack: {'policy': '/api/v3/onefuse/dnsPolicies/6/', 'templateProperties': {'nameGroup': 'pp', 'hostname': 'pp-atlplwp022', 'nameLocation': 'atl', 'nameEnv': 'p', 'nameOS': 'l', 'nameApp': 'wp', 'dnsSuffix': 'infoblox851.sovlabs.net'}, 'workspace': '/api/v3/onefuse/workspaces/2/', 'name': 'pp-atlplwp022', 'value': '10.30.29.13', 'zones': ['infoblox851.sovlabs.net']}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "POST /api/v3/onefuse/dnsReservations/ HTTP/1.1" 202 752
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:OneFuse Post Response status: 202
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:max_sleep_seconds: 600
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1644/ HTTP/1.1" 200 1910
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Waiting for job completion. Sleeping for 5 seconds. Job state: In_Progress
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1644/ HTTP/1.1" 200 2772
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:OneFuse Job Successful
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:mo_json: {'_links': {'self': {'href': '/api/v3/onefuse/dnsReservations/117/', 'title': 'pp-atlplwp022'}, 'workspace': {'href': '/api/v3/onefuse/workspaces/2/', 'title': 'Default'}, 'policy': {'href': '/api/v3/onefuse/dnsPolicies/6/', 'title': 'prod'}, 'jobMetadata': {'href': '/api/v3/onefuse/jobMetadata/1644/', 'title': 'Job Metadata Record id 1644'}}, 'name': 'pp-atlplwp022', 'id': 117, 'records': [{'type': 'host', 'name': 'pp-atlplwp022.infoblox851.sovlabs.net', 'value': '10.30.29.13'}], 'trackingId': 'f7ba52f3-8f1e-4221-8bfa-318369bc9da2'}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/microsoftADPolicies/?filter=name.iexact:%22prod%22 HTTP/1.1" 200 939
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Submitting post request to path: /microsoftADComputerAccounts/ with  properties_stack: {'policy': '/api/v3/onefuse/microsoftADPolicies/3/', 'templateProperties': {'nameGroup': 'pp', 'hostname': 'pp-atlplwp022', 'nameLocation': 'atl', 'nameEnv': 'p', 'nameOS': 'l', 'nameApp': 'wp', 'dnsSuffix': 'infoblox851.sovlabs.net', 'ouGroup': 'PiedPiper', 'ouEnv': 'PRD', 'sgEnv': 'prod'}, 'workspace': '/api/v3/onefuse/workspaces/2/', 'name': 'pp-atlplwp022'}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "POST /api/v3/onefuse/microsoftADComputerAccounts/ HTTP/1.1" 202 805
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:OneFuse Post Response status: 202
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:max_sleep_seconds: 900
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1645/ HTTP/1.1" 200 1980
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Waiting for job completion. Sleeping for 5 seconds. Job state: Initialized
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1645/ HTTP/1.1" 200 1983
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Waiting for job completion. Sleeping for 5 seconds. Job state: In_Progress
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1645/ HTTP/1.1" 200 2997
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:OneFuse Job Successful
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:mo_json: {'_links': {'self': {'href': '/api/v3/onefuse/microsoftADComputerAccounts/110/', 'title': 'pp-atlplwp022'}, 'workspace': {'href': '/api/v3/onefuse/workspaces/2/', 'title': 'Default'}, 'policy': {'href': '/api/v3/onefuse/microsoftADPolicies/3/', 'title': 'prod'}, 'jobMetadata': {'href': '/api/v3/onefuse/jobMetadata/1645/', 'title': 'Job Metadata Record id 1645'}}, 'name': 'pp-atlplwp022', 'id': 110, 'state': 'build', 'buildOu': 'OU=PiedPiper,OU=PRD,OU=build,DC=sovlabs,DC=net', 'finalOu': 'OU=PiedPiper,OU=PRD,OU=final,DC=sovlabs,DC=net', 'securityGroups': ['CN=prodDemoComputers,OU=Groups,OU=SovLabs,DC=sovlabs,DC=net'], 'trackingId': 'f7ba52f3-8f1e-4221-8bfa-318369bc9da2'}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/servicenowCMDBPolicies/?filter=name.iexact:%22linux%22 HTTP/1.1" 200 2705
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Submitting post request to path: /servicenowCMDBDeployments/ with  properties_stack: {'policy': '/api/v3/onefuse/servicenowCMDBPolicies/1/', 'templateProperties': {'OneFuse_VmNic0.dnsSuffix': 'infoblox851.sovlabs.net', 'OneFuse_VmNic0.hostname': 'pp-atlplwp022', 'OneFuse_VmNic0.fqdn': 'pp-atlplwp022', 'OneFuse_VmNic0.ipAddress': '10.30.29.13', 'OneFuse_VmHardware.platformUuid': '42258454-8794-7a93-0ae6-ffe5a27f709a', 'OneFuse_VmHardware.cpuCount': '2', 'OneFuse_VmHardware.totalStorageGB': '16', 'OneFuse_VmHardware.memoryMB': '1024', 'OneFuse_VmHardware.powerState': 'on'}, 'workspace': '/api/v3/onefuse/workspaces/2/'}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "POST /api/v3/onefuse/servicenowCMDBDeployments/ HTTP/1.1" 202 799
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:OneFuse Post Response status: 202
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:max_sleep_seconds: 600
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1646/ HTTP/1.1" 200 2142
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Waiting for job completion. Sleeping for 5 seconds. Job state: In_Progress
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1646/ HTTP/1.1" 200 4406
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:OneFuse Job Successful
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:mo_json: {'_links': {'self': {'href': '/api/v3/onefuse/servicenowCMDBDeployments/89/', 'title': 'Service Now Cmdb Deployment id 89'}, 'workspace': {'href': '/api/v3/onefuse/workspaces/2/', 'title': 'Default'}, 'policy': {'href': '/api/v3/onefuse/servicenowCMDBPolicies/1/', 'title': 'linux'}, 'jobMetadata': {'href': '/api/v3/onefuse/jobMetadata/1646/', 'title': 'Job Metadata Record id 1646'}}, 'id': 89, 'configurationItemsInfo': [{'ciClassName': 'cmdb_ci_linux_server', 'ciName': 'pp-atlplwp022'}], 'executionDetails': {'latestExecution': {'lifecycle': 'provision', 'timestamp': '2021-06-28T13:53:25.338174Z'}, 'response': {'result': {'items': [{'className': 'cmdb_ci_linux_server', 'operation': 'UPDATE', 'sysId': '13ae0c981b6c341049cccae5624bcb78', 'identifierEntrySysId': '567d0e03dba7ec10050e88d40596194d', 'identificationAttempts': [{'identifierName': '', 'attemptResult': 'SKIPPED', 'info': 'sys_object_source SKIPPED', 'attributes': [], 'hybridEntryCiAttributes': []}, {'identifierName': 'Linux Server rule', 'attemptResult': 'MATCHED', 'attributes': ['serial_number'], 'searchOnTable': 'cmdb_ci_linux_server', 'hybridEntryCiAttributes': []}], 'errorCount': 0, 'markers': [], 'inputIndices': [0], 'mergedPayloadIds': [], 'warningCount': 0}], 'additionalCommittedItems': [], 'relations': [], 'additionalCommittedRelations': []}}}, 'archived': False, 'trackingId': 'f7ba52f3-8f1e-4221-8bfa-318369bc9da2'}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/namingPolicies/?filter=name.iexact:%22machine%22 HTTP/1.1" 200 949
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Submitting post request to path: /customNames/ with  properties_stack: {'policy': '/api/v3/onefuse/namingPolicies/8/', 'templateProperties': {'nameGroup': 'pp', 'nameLocation': 'atl', 'nameEnv': 'p', 'nameOS': 'l', 'nameApp': 'wp'}, 'workspace': '/api/v3/onefuse/workspaces/2/'}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "POST /api/v3/onefuse/customNames/ HTTP/1.1" 202 764
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:OneFuse Post Response status: 202
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:max_sleep_seconds: 600
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1647/ HTTP/1.1" 200 1676
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Waiting for job completion. Sleeping for 5 seconds. Job state: In_Progress
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1647/ HTTP/1.1" 200 2450
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:OneFuse Job Successful
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:mo_json: {'_links': {'self': {'href': '/api/v3/onefuse/customNames/350/', 'title': 'pp-atlplwp023'}, 'workspace': {'href': '/api/v3/onefuse/workspaces/2/', 'title': 'Default'}, 'policy': {'href': '/api/v3/onefuse/namingPolicies/8/', 'title': 'machine'}, 'jobMetadata': {'href': '/api/v3/onefuse/jobMetadata/1647/', 'title': 'Job Metadata Record id 1647'}}, 'name': 'pp-atlplwp023', 'id': 350, 'dnsSuffix': 'sovlabs.net', 'trackingId': '66ece292-420d-4b19-a8b0-c05d23c64184'}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/namingPolicies/?filter=name.iexact:%22machine%22 HTTP/1.1" 200 949
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Submitting post request to path: /customNames/ with  properties_stack: {'policy': '/api/v3/onefuse/namingPolicies/8/', 'templateProperties': {'nameGroup': 'pp', 'nameLocation': 'atl', 'nameEnv': 'p', 'nameOS': 'l', 'nameApp': 'wp'}, 'workspace': '/api/v3/onefuse/workspaces/2/'}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "POST /api/v3/onefuse/customNames/ HTTP/1.1" 202 764
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:OneFuse Post Response status: 202
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:max_sleep_seconds: 600
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1667/ HTTP/1.1" 200 1674
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:Waiting for job completion. Sleeping for 5 seconds. Job state: Initialized
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): se-1f-demo-1-3.sovlabs.net:443
+DEBUG:urllib3.connectionpool:https://se-1f-demo-1-3.sovlabs.net:443 "GET /api/v3/onefuse/jobMetadata/1667/ HTTP/1.1" 200 2450
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:OneFuse Job Successful
+DEBUG:ansible.module_utils.onefuse_python.onefuse_admin:mo_json: {'_links': {'self': {'href': '/api/v3/onefuse/customNames/352/', 'title': 'pp-atlplwp025'}, 'workspace': {'href': '/api/v3/onefuse/workspaces/2/', 'title': 'Default'}, 'policy': {'href': '/api/v3/onefuse/namingPolicies/8/', 'title': 'machine'}, 'jobMetadata': {'href': '/api/v3/onefuse/jobMetadata/1667/', 'title': 'Job Metadata Record id 1667'}}, 'name': 'pp-atlplwp025', 'id': 352, 'dnsSuffix': 'sovlabs.net', 'trackingId': 'b8bb3656-4492-44d3-a093-cb71c28e8453'}

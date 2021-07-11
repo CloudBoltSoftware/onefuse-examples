@@ -31,8 +31,6 @@ data "onefuse_ansible_tower_policy" "policy" {
 resource "onefuse_ansible_tower_deployment" "job" {
 
   policy_id = data.onefuse_ansible_tower_policy.policy.id
-  hosts = [ local.fqdn ]
-  limit = local.fqdn
   template_properties = var.template_properties
   timeouts {
       create = "12m"
@@ -41,7 +39,8 @@ resource "onefuse_ansible_tower_deployment" "job" {
 }
 
 locals {
-fqdn = format("%s.%s", var.hostname, var.dns_suffix)
+//fqdn = format("%s.%s", var.hostname, var.dns_suffix)
+fqdn = "localhost"
 }
 
 output "ansible_output" {
