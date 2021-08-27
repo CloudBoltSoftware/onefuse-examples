@@ -74,4 +74,3 @@ vsphere_cluster = {
 
 }
 
-local.vsphere_cluster.cluster
