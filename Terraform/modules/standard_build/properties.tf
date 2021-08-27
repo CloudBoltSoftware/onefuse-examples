@@ -34,7 +34,7 @@ module "environment" {
   template_properties = var.template_properties
 } 
 
-data "onefuse_static_property_set" "size" {
+data "onefuse_property_set" "size" {
   name = format("sps_size_%s", var.size)
 }
  module "rendered_size" {
@@ -49,7 +49,7 @@ data "onefuse_static_property_set" "size" {
   template_properties = merge(var.template_properties, local.rendered_values)
 }
 
-data "onefuse_static_property_set" "vsphere_cluster" {
+data "onefuse_property_set" "vsphere_cluster" {
     name = module.globalproperties.properties.OneFuse_TF_Props.vsphere_cluster
 }
 
