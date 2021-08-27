@@ -61,15 +61,15 @@ locals  {
   IPv4_Netmask = module.globalproperties.properties.OneFuse_TF_Props.IPv4_Netmask
 
 rendered_values = {
-    cpuCount = jsondecode(data.onefuse_static_property_set.size.raw).Global_Props.cpuCount
-    memoryGB = jsondecode(data.onefuse_static_property_set.size.raw).Global_Props.memoryGB
+    cpuCount = jsondecode(data.onefuse_property_set.size.raw).Global_Props.cpuCount
+    memoryGB = jsondecode(data.onefuse_property_set.size.raw).Global_Props.memoryGB
     subnet = module.onefuse.subnet
     deployment_count = module.deployment_count.hostname
   }
 
 vsphere_cluster = {
-    cluster = jsondecode(data.onefuse_static_property_set.vsphere_cluster.raw).cluster
-    datastore = jsondecode(data.onefuse_static_property_set.vsphere_cluster.raw).datastore
+    cluster = jsondecode(data.onefuse_property_set.vsphere_cluster.raw).cluster
+    datastore = jsondecode(data.onefuse_property_set.vsphere_cluster.raw).datastore
   }
 
 }
