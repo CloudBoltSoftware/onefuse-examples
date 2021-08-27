@@ -1,35 +1,35 @@
 module "deployment_count" {
-    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//naming?ref=v1.2-beta.1"
+    source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//naming?ref=develop"
     policy = "deployment_count"
     template_properties = var.template_properties
 }
 
 module "environment" {
-  source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=v1.2-beta.1"
+  source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=develop"
   property_set = format("sps_env_%s", var.environment)
   template_properties = var.template_properties
 }  
 
  module "application" {
-  source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=v1.2-beta.1"
+  source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=develop"
   property_set = format("sps_app_%s", var.application)
   template_properties = var.template_properties
 }  
 
  module "location" {
-  source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=v1.2-beta.1"
+  source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=develop"
   property_set = format("sps_location_%s", var.location)
   template_properties = var.template_properties
 }
 
  module "os" {
-  source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=v1.2-beta.1"
+  source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=develop"
   property_set = module.application.properties.OneFuse_SPS_OS
   template_properties = var.template_properties
 } 
 
  module "group" {
-  source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=v1.2-beta.1"
+  source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=develop"
   property_set = format("sps_group_%s", var.group)
   template_properties = var.template_properties
 } 
@@ -38,13 +38,13 @@ data "onefuse_static_property_set" "size" {
   name = format("sps_size_%s", var.size)
 }
  module "rendered_size" {
-  source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=v1.2-beta.1"
+  source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=develop"
   property_set = format("sps_size_%s", var.size)
   template_properties = merge(var.template_properties, local.rendered_values)
 }
 
  module "globalproperties" {
-  source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=v1.2-beta.1"
+  source = "git::https://github.com/CloudBoltSoftware/terraform-module-onefuse.git//ptk?ref=develop"
   property_set = "sps_globalproperties"
   template_properties = merge(var.template_properties, local.rendered_values)
 }
